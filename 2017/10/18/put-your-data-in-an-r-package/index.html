@@ -68,7 +68,7 @@
 
     <div class="article-content">
       <p>I used to write long R scripts that imported data files, created new variables, reshaped the data, reshaped it again, and spit out results along the way, all in one file.</p>
-<p>That worked so long as I never wanted to use that data again. But what if I did? Should I just tack on more code for the new analysis, and then even more code for yet more analyses? That approach will litter your environment with objects that irrelevant for, and might even interfere with, a particular analysis. Should I copy all the files into a new directory and then hack away at the code? Now I have two copies of the data – which one is definitive? Should I just treat the original data files as the data? Now I have to repeat the same initial processing steps every time I want to reuse that data.</p>
+<p>That worked so long as I never wanted to use that data again. But what if I did? Should I just tack on more code for the new analysis, and then even more code for yet more analyses? That approach will litter your environment with objects that are irrelevant for, and might even interfere with, a particular analysis. Should I copy all the files into a new directory and then hack away at the code? Now I have two copies of the data – which one is definitive? Should I just treat the original data files as the data? Now I have to repeat the same initial processing steps every time I want to reuse that data.</p>
 <div id="the-solution" class="section level2">
 <h2>The solution</h2>
 <p>For each new data set I create a new R data package. This package lives in my library along with <code>ggplot2</code>, <code>dplyr</code>, <code>lme4</code>, and all my other packages, and is accessible in any project or analysis with a simple:</p>
