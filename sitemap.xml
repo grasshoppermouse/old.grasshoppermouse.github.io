@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/10/18/put-your-data-in-an-r-package/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2016/03/07/academic-success-is-either-a-crapshoot-or-a-scam.-john-tukeys-road-to-redemption/</loc>
+    <lastmod>2016-03-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink.-the-statistical-crisis-in-science./</loc>
+    <lastmod>2015-06-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</loc>
+    <lastmod>2015-05-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/05/15/im-a-sucker-for-a-good-theory/</loc>
+    <lastmod>2015-05-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/04/19/is-pregnancy-immunosuppression-a-myth/</loc>
+    <lastmod>2015-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/reproducible-research/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/reproducible-research/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

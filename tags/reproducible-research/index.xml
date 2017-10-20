@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reproducible Research on Ed Hagen</title>
+    <link>/tags/reproducible-research/</link>
+    <description>Recent content in Reproducible Research on Ed Hagen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/reproducible-research/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Put your data in an R package</title>
+      <link>/2017/10/18/put-your-data-in-an-r-package/</link>
+      <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/10/18/put-your-data-in-an-r-package/</guid>
+      <description>I used to write long R scripts that imported data files, created new variables, reshaped the data, reshaped it again, and spit out results along the way, all in one file.
+That worked so long as I never wanted to use that data again. But what if I did? Should I just tack on more code for the new analysis, and then even more code for yet more analyses? That approach will litter your environment with objects that irrelevant for, and might even interfere with, a particular analysis.</description>
+    </item>
+    
+  </channel>
+</rss>
