@@ -6,10 +6,20 @@
     <description>Recent content in R on Ed Hagen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://grasshoppermouse.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PCA: new coordinate system, same data</title>
+      <link>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</link>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</guid>
+      <description>There are many ways to teach Principal Component Analysis (PCA). This way is mine.
+The first constellation I learned to recognize was the Big Dipper. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the star at the end of the handle has different pairs of \(x\) and \(y\) coordinates, yet it is easy to recognize it as the same star:</description>
+    </item>
     
     <item>
       <title>Put your data in an R package</title>
