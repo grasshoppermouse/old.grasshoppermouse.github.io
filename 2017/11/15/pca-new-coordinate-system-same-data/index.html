@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.30" />
+
+
+<title>PCA: new coordinate system, same data - Ed Hagen</title>
+<meta property="og:title" content="PCA: new coordinate system, same data - Ed Hagen">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="200"
+         height="300"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="http://anthro.vancouver.wsu.edu/faculty/hagen/">Ed Hagen@WSU</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">8 min read</span>
+    
+
+    <h1 class="article-title">PCA: new coordinate system, same data</h1>
+
+    
+    <span class="article-date">2017/11/15</span>
+    
+
+    <div class="article-content">
+      <p>There are many ways to teach Principal Component Analysis (PCA). This way is mine.</p>
+<p>The first constellation I learned to recognize was the <a href="https://en.wikipedia.org/wiki/Big_Dipper">Big Dipper</a>. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the star at the end of the handle has different pairs of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates, yet it is easy to recognize it as the same star:</p>
+
+<figure >
+    
+        <img src="/images/ConstellationBigDipper.png" />
+    
+    
+</figure>
+
+<p>The point is: we recognize the Big Dipper, not by the location of the stars in the sky, but by the location of each star <em>relative to the others</em>.</p>
+<p>The first and most important step in understanding PCA is to think about your data in the same way that you think about constellations: it’s the relationships between your data points, not their individual values, that matters.</p>
+<p>In a scientific study, we typically measure multiple values on each person (or population, or whatever), e.g., age, height, weight, sex, and so forth.</p>
+<p>The mental frame shift to make is to think about each data point as a single “star” in the sky, and all your data points as a constellation of stars in the sky. Your data has a “structure” determined by the relationships of each observations to the others that does not depend on any particular coordinate system. In other words, you can think about each “unit” in your data – person or observation or “row” – as one point in an <span class="math inline">\(N\)</span>-dimensional Euclidean space, where <span class="math inline">\(N\)</span> is the number of variables.</p>
+<p>Here is a concrete example with 2 variables per person – <em>height</em> and <em>weight</em> – and thus a 2-dimensional space of points:</p>
+<pre class="r"><code># Height and weight of !Kung individuals
+# From Howell via McElreath:
+d &lt;- readr::read_delim(&quot;https://raw.githubusercontent.com/rmcelreath/rethinking/master/data/Howell1.csv&quot;, delim = &#39;;&#39;)
+library(ggplot2)
+ggplot(d, aes(height, weight)) + 
+  geom_point(alpha = 0.5) + 
+  scale_x_continuous(limits = c(0,200)) +
+  scale_y_continuous(limits = c(0,70)) +
+  geom_point(x = 0, y = 0, colour = &#39;red&#39;, size = 3) +
+  labs(title = &quot;!Kung heights and weights&quot;, subtitle = &quot;Red dot at the origin of the coordinate system.&quot;)</code></pre>
+<p><img src="/post/2017-11-15-pca-new-coordinate-system-same-data_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Most students would (correctly) interpret this plot as depicting the relationship between height and weight.</p>
+<p>There is another way.</p>
+<p>Although each star in the Big Dipper is also described by two variables – an <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinate (or an <a href="http://www.skyandtelescope.com/astronomy-resources/what-are-celestial-coordinates/">ascension and declination</a>) – both variables are in the <em>same units</em> (angles). This is an important reason why we can think about the Big Dipper without thinking about the two variables per star.</p>
+<p>The first step on our journey is therefore to put our height and weight variables into the same units by <a href="https://en.wikipedia.org/wiki/Standard_score">standardizing them</a> (subtract the mean from each variable, and then divide it by its standard deviation):</p>
+<pre class="r"><code># Standardize each variable
+d$zheight &lt;- scale(d$height)
+d$zweight &lt;- scale(d$weight)
+# Plot
+ggplot(d, aes(zheight, zweight)) + 
+  geom_point(alpha = 0.5) +
+  geom_point(x = 0, y = 0, colour = &#39;red&#39;, size = 3) +
+  coord_fixed(xlim = c(-4, 3), ylim = c(-3, 3)) +
+  labs(title = &quot;Standardized !Kung heights and weights&quot;, subtitle = &quot;Red dot at the origin of the coordinate system.&quot;)</code></pre>
+<p><img src="/post/2017-11-15-pca-new-coordinate-system-same-data_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Many folks would (correctly) interpret these new variables as transformed versions of the original data. However, I would like you to instead see this as a transformation of the <em>coordinate system</em>: we have translated the origin of the coordinate system to the middle of the data (the red dot), and we have put the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> axes on the same scale (1 unit of x equals 1 unit of y). The data remain the same.</p>
+<p>The translation of the origin to the center of the data is useful because positive values on the <span class="math inline">\(x\)</span>-axis now indicate values that are greater than the mean, and negative values now indicate values that are less than the mean. The same goes for the <span class="math inline">\(y\)</span>-axis. The translation of the origin makes it easy to identify individuals whose heights and weights are above or below average. Transforming the coordinate system (not the data!) can help us interpret the data – the new origin has advantages over the original origin.</p>
+<p>We are ready for another transformation of the coordinate system: a rotation around the origin:</p>
+<pre class="r"><code>angle &lt;- -1.5 # angle of rotation in radians
+
+# New x and y coordinates after rotation
+d$x &lt;- d$zheight * cos(angle) - d$zweight * sin(angle)
+d$y &lt;- d$zheight * sin(angle) + d$zweight * cos(angle)
+
+ggplot(d, aes(x, y)) + 
+  geom_point(alpha = 0.5) +
+  geom_point(x = 0, y = 0, colour = &#39;red&#39;, size = 3) +
+  coord_fixed(xlim = c(-4, 3), ylim = c(-3, 3)) +
+  labs(title = &quot;Rotated !Kung heights and weights&quot;, subtitle = &quot;Red dot at the origin of the coordinate system.&quot;)</code></pre>
+<p><img src="/post/2017-11-15-pca-new-coordinate-system-same-data_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Here are the pairs of coordinates of our first 6 data points in each of our 3 different coordinate systems (the original, standardized, and rotated coordinate system):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">height</th>
+<th align="right">weight</th>
+<th align="right">zheight</th>
+<th align="right">zweight</th>
+<th align="right">x</th>
+<th align="right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">151.76</td>
+<td align="right">47.83</td>
+<td align="right">0.49</td>
+<td align="right">0.83</td>
+<td align="right">0.86</td>
+<td align="right">-0.43</td>
+</tr>
+<tr class="even">
+<td align="right">139.70</td>
+<td align="right">36.49</td>
+<td align="right">0.05</td>
+<td align="right">0.06</td>
+<td align="right">0.06</td>
+<td align="right">-0.05</td>
+</tr>
+<tr class="odd">
+<td align="right">136.53</td>
+<td align="right">31.86</td>
+<td align="right">-0.06</td>
+<td align="right">-0.25</td>
+<td align="right">-0.26</td>
+<td align="right">0.04</td>
+</tr>
+<tr class="even">
+<td align="right">156.84</td>
+<td align="right">53.04</td>
+<td align="right">0.67</td>
+<td align="right">1.18</td>
+<td align="right">1.23</td>
+<td align="right">-0.59</td>
+</tr>
+<tr class="odd">
+<td align="right">145.41</td>
+<td align="right">41.28</td>
+<td align="right">0.26</td>
+<td align="right">0.38</td>
+<td align="right">0.40</td>
+<td align="right">-0.23</td>
+</tr>
+<tr class="even">
+<td align="right">163.83</td>
+<td align="right">62.99</td>
+<td align="right">0.93</td>
+<td align="right">1.86</td>
+<td align="right">1.92</td>
+<td align="right">-0.79</td>
+</tr>
+</tbody>
+</table>
+<p>Although the pairs of coordinates are radically different, we easily recognize the same constellation of data in the plots, regardless of coordinate system.</p>
+<p>We have seen how translating the origin of the coordinate system to the center of the data helps us interpret the data. But how could rotating the coordinate system be helpful?</p>
+<p>What if we rotated the data so that its variance along the <span class="math inline">\(x\)</span>-axis was maximized? Then, in this rotated coordinate system, folks with large positive values on the <span class="math inline">\(x\)</span>-axis would be maximally “different” from folks with large negative values on the <span class="math inline">\(x\)</span>-axis in “<em>height-weight</em>” space. Differences in <span class="math inline">\(y\)</span>-values would then be less important in distinguishing individuals.</p>
+<p>We can find the rotation that maximizes variance along the <span class="math inline">\(x\)</span>-axis by trial and error: simply choose different angles, compute the rotation, and then compute the variance or standard deviation along the <span class="math inline">\(x\)</span>-axis. Rinse and repeat unit you find an angle that maximizes the standard deviation. There will be two such angles, each <span class="math inline">\(\pi\)</span> radians (180 degrees) apart:</p>
+<pre class="r"><code># Run this code over and over with
+# different values for the angle
+# until sd(d$x) is at a maximum.
+angle &lt;- -0.78 # This angle comes close; -0.78 + pi would also come close
+d$x &lt;- d$zheight * cos(angle) - d$zweight * sin(angle)
+sd(d$x) # We could also use var(d$x)</code></pre>
+<pre><code>## [1] 1.393114</code></pre>
+<p>A second way would be to use R’s <code>optim</code> function, which automates the above process:</p>
+<pre class="r"><code># This function rotates and then
+# computes sd along x.
+
+sd_x &lt;- function(angle) {
+  sd(d$zheight * cos(angle) - d$zweight * sin(angle))
+}
+
+# This function finds the angle that 
+# maximizes the above function
+opt &lt;- 
+  optim(
+    0, # Starting value of angle
+    sd_x, # The function to minimize
+    method = &quot;Brent&quot;, # The optim procedure that works best in 1-D
+    lower = -pi,
+    upper = pi,
+    control = list(fnscale = -1) # Maximize instead of minimize
+    )</code></pre>
+<p>An angle of rotation (in radians) that maximizes sd along x:</p>
+<p><code>opt$par</code> = -0.7853982</p>
+<p>The maximized standard deviation:</p>
+<p><code>opt$value</code> = 1.393134</p>
+<p>Let’s plot our data using that optimal angle of rotation:</p>
+<pre class="r"><code># one optimal angle in radians;
+# the other would be opt$par + pi
+angle &lt;- opt$par 
+
+# New x and y coordinates after rotation
+d$x &lt;- d$zheight * cos(angle) - d$zweight * sin(angle)
+d$y &lt;- d$zheight * sin(angle) + d$zweight * cos(angle)
+
+ggplot(d, aes(x, y)) + 
+  geom_point(alpha = 0.5) +
+  geom_point(x = 0, y = 0, colour = &#39;red&#39;, size = 3) +
+  coord_fixed(xlim = c(-4, 3), ylim = c(-3, 3)) +
+  labs(title = &quot;!Kung heights and weights rotated to maximize variance along x-axis&quot;, subtitle = &quot;Red dot at the origin of the coordinate system.&quot;)</code></pre>
+<p><img src="/post/2017-11-15-pca-new-coordinate-system-same-data_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Guess what? The <span class="math inline">\(x\)</span>-asis is principal component 1 (PC1), and the <span class="math inline">\(y\)</span>-axis is principle component 2 (PC2), as we can confirm by comparing our results to those from R’s <code>prcomp</code> (principal component) function:</p>
+<pre class="r"><code># Compute PCA using the standard R function
+m &lt;- prcomp(~ zheight + zweight, data = d)
+summary(m)</code></pre>
+<pre><code>## Importance of components:
+##                           PC1     PC2
+## Standard deviation     1.3931 0.24326
+## Proportion of Variance 0.9704 0.02959
+## Cumulative Proportion  0.9704 1.00000</code></pre>
+<pre class="r"><code># Compare the standard deviations above with:
+sd(d$x)</code></pre>
+<pre><code>## [1] 1.393134</code></pre>
+<pre class="r"><code>sd(d$y)</code></pre>
+<pre><code>## [1] 0.2432649</code></pre>
+<p>Compare our x &amp; y values…</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">x</th>
+<th align="right">y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.9326787</td>
+<td align="right">0.2409332</td>
+</tr>
+<tr class="even">
+<td align="right">0.0788411</td>
+<td align="right">0.0052468</td>
+</tr>
+<tr class="odd">
+<td align="right">-0.2244852</td>
+<td align="right">-0.1354080</td>
+</tr>
+<tr class="even">
+<td align="right">1.3134063</td>
+<td align="right">0.3613867</td>
+</tr>
+<tr class="odd">
+<td align="right">0.4554072</td>
+<td align="right">0.0890045</td>
+</tr>
+<tr class="even">
+<td align="right">1.9703735</td>
+<td align="right">0.6604768</td>
+</tr>
+</tbody>
+</table>
+<p>… with those from <code>prcomp</code></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">PC1</th>
+<th align="right">PC2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">-0.9326787</td>
+<td align="right">-0.2409332</td>
+</tr>
+<tr class="even">
+<td align="right">-0.0788411</td>
+<td align="right">-0.0052468</td>
+</tr>
+<tr class="odd">
+<td align="right">0.2244852</td>
+<td align="right">0.1354080</td>
+</tr>
+<tr class="even">
+<td align="right">-1.3134063</td>
+<td align="right">-0.3613867</td>
+</tr>
+<tr class="odd">
+<td align="right">-0.4554072</td>
+<td align="right">-0.0890045</td>
+</tr>
+<tr class="even">
+<td align="right">-1.9703735</td>
+<td align="right">-0.6604768</td>
+</tr>
+</tbody>
+</table>
+<p>The minus signs are reversed because the axes are rotated 180 degrees, but the variance is still maximized along the x-axis (remember, there are 2 rotations that will maximize the variance). The <code>prcomp</code> function does not find these rotations in the same way we did, but the results are the same, as you can see.</p>
+<p>In summary, principal components are simply a new orthogonal (perpendicular) coordinate system for your data, rotated so the variance of your data is maximized along the first axis; then, rotating around the first axis, the variance of data is again maximzed along the second axis, which is perpendicular to the first; and so forth, until the directions of all axes are specified.</p>
+<p>There are many uses of this new coordinate system. In our example, 97% of the variance in our data falls along PC1. Thus, we might interpret PC1, which is a combination of height and weight, as something like <em>size</em>. By rotating our coordinate system, we have identified underlying “structure” in our data. For 2-d data like our example, PCA is not that useful. But when our data have many dimensions, PCA and related techniques can find structure that would be difficult or impossible to find without them.</p>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//grasshoppermouse.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-59181618-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+

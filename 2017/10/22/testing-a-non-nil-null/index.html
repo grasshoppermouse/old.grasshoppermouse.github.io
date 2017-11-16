@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.30" />
+
+
+<title>Testing a non-nil null: an exercise - Ed Hagen</title>
+<meta property="og:title" content="Testing a non-nil null: an exercise - Ed Hagen">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="200"
+         height="300"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="http://anthro.vancouver.wsu.edu/faculty/hagen/">Ed Hagen@WSU</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">5 min read</span>
+    
+
+    <h1 class="article-title">Testing a non-nil null: an exercise</h1>
+
+    
+    <span class="article-date">2017/10/22</span>
+    
+
+    <div class="article-content">
+      <blockquote>
+<p><em>Because physical theories typically predict numerical values, an improvement in experimental precision reduces the tolerance range and hence increases corroborability. In most psychological research, improved power of a statistical design leads to a prior probability approaching 1⁄2 of finding a significant difference in the theoretically predicted direction. Hence the corroboration yielded by “success” is very weak, and becomes weaker with increased precision. “Statistical significance” plays a logical role in psychology precisely the reverse of its role in physics.</em> Meehl (1967).</p>
+</blockquote>
+<hr />
+<blockquote>
+<p><em>And [regarding the Holy Hand Grendade] the Lord spake, saying, “First shalt thou take out the Holy Pin. Then, shalt thou count to three. No more. No less. Three shalt be the number thou shalt count, and the number of the counting shall be three. Four shalt thou not count, nor either count thou two, excepting that thou then proceed to three. Five is right out.”</em> Second Brother, Monty Python and the Holy Grail</p>
+</blockquote>
+<p>Inspired by Meehl (1967), I decided to design an exercise for my Anthro Quantitive Methods course that would illustrate a non-nil null hypothesis: one that, unlike the standard “nil” hypothesis of “<span class="math inline">\(~H_0 = 0\)</span>” (Cohen 1994), would be, say <span class="math inline">\(H_0 = 3\)</span>. Because most of the assigned articles for the semester would relentlessly attack Null Hypothesis Significance Testing (NHST), I wanted students to first appreciate that, applied to the right sort of problem, NHST was a powerful tool to <em>challenge</em> our theories (not confirm them!).</p>
+<p>I thought this exercise would be most effective if students collected and analyzed their own data, which is easy to do these days as their smartphones are packed with sensors.</p>
+
+<figure >
+    
+        <img src="/images/tricorder.jpg" />
+    
+    
+</figure>
+
+<p>I needed (1) a substantive theory that would do a pretty good job predicting data from one of the smartphone sensors, but (2) nevertheless be falsifiable by those same data. I decided that students would collect data from their phone accelerometer while the phone was swinging like a pendulum from its charging cord. The acceleration would be pretty well modeled as a damped simple harmonic oscillator, but we should also be able to detect deviations from the predictions of the model, thus pointing to new physics!</p>
+<p>These students are in the social sciences, so I worried a bit if some of the mathematical machinery would be common knowledge, e.g.,trig functions and simple derivatives and differential equations. More importantly, would <em>I</em> remember this stuff from freshman physics over 30 years ago?</p>
+<p>To collect data straight off their smartphone sensors, I had students install the free SparkVue app (available for <a href="https://itunes.apple.com/us/app/sparkvue/id361907181?mt=8#">iPhone</a> and <a href="https://play.google.com/store/apps/details?id=com.isbx.pasco.Spark&amp;hl=en">Android</a>).</p>
+<p>I then had them hang their phone from its charging cable, start the app recording data with a sampling rate of at least 40 Hz, and then let the phone swing freely for about 30-60 seconds (over something soft, in case the phone fell). Here are the data I got from my wife’s iphone:</p>
+<pre class="r"><code>pendulum &lt;- readr::read_csv(&#39;http://grasshoppermouse.github.io/pendulum.csv&#39;, skip = 1)
+knitr::kable(head(pendulum))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Time (s)</th>
+<th align="right">Acceleration - x (m/s²)</th>
+<th align="right">Acceleration - y (m/s²)</th>
+<th align="right">Acceleration - z (m/s²)</th>
+<th align="right">Acceleration - resultant (m/s²)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.000</td>
+<td align="right">11.0</td>
+<td align="right">5.2</td>
+<td align="right">5.7</td>
+<td align="right">13.4</td>
+</tr>
+<tr class="even">
+<td align="right">0.025</td>
+<td align="right">10.8</td>
+<td align="right">5.2</td>
+<td align="right">6.5</td>
+<td align="right">13.6</td>
+</tr>
+<tr class="odd">
+<td align="right">0.050</td>
+<td align="right">10.8</td>
+<td align="right">5.2</td>
+<td align="right">6.5</td>
+<td align="right">13.6</td>
+</tr>
+<tr class="even">
+<td align="right">0.075</td>
+<td align="right">10.8</td>
+<td align="right">5.2</td>
+<td align="right">6.5</td>
+<td align="right">13.6</td>
+</tr>
+<tr class="odd">
+<td align="right">0.100</td>
+<td align="right">10.9</td>
+<td align="right">5.2</td>
+<td align="right">6.2</td>
+<td align="right">13.5</td>
+</tr>
+<tr class="even">
+<td align="right">0.125</td>
+<td align="right">10.9</td>
+<td align="right">5.2</td>
+<td align="right">6.2</td>
+<td align="right">13.5</td>
+</tr>
+</tbody>
+</table>
+<p>The y-axis is the long axis of the phone, so that’s the vector we want. Here’s what the data look like:</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## Loading tidyverse: ggplot2
+## Loading tidyverse: tibble
+## Loading tidyverse: tidyr
+## Loading tidyverse: readr
+## Loading tidyverse: purrr
+## Loading tidyverse: dplyr</code></pre>
+<pre><code>## Conflicts with tidy packages ----------------------------------------------</code></pre>
+<pre><code>## filter(): dplyr, stats
+## lag():    dplyr, stats</code></pre>
+<pre class="r"><code> # Easier names
+names(pendulum) &lt;- c(&#39;time&#39;, &#39;ax&#39;, &#39;ay&#39;, &#39;az&#39;, &#39;ar&#39;)
+
+# Trim the beginning and end, when I&#39;m holding the phone
+pendulum &lt;-
+  pendulum %&gt;% 
+  dplyr::filter(time &gt;= 1, time &lt;= max(time) - 2)
+
+ggplot(pendulum, aes(x = time)) + geom_line(aes(y = ax), colour=&#39;red&#39;) + geom_line(aes(y = ay), colour=&#39;blue&#39;) + geom_line(aes(y = az), colour=&#39;black&#39;)</code></pre>
+<p><img src="/post/2017-10-22-testing-a-non-nil-null_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Hang your device from a string (or maybe its charging cable) attached to something so that your device can swing freely like a pendulum.</li>
+</ol>
+<p>The string should be about 18 inches long.</p>
+<p>The device should hang vertically.</p>
+<p>I did this simply by hanging an iPhone upside down from it’s charging cable.</p>
+<p>Do not hold the string or cable in your hand. Attach it to something fixed.</p>
+<p>Measure the distance from the middle of your device to the point where the string or cable is attached (should be around 18 inches). Write down this number somewhere.</p>
+<p>Do this over a rug or something soft to protect your device in case it accidentally falls.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Follow the instructions in the attached PDF to collect data from the on-board accelerometer. You want “Acceleration Y” (the Y-axis is the long axis of your device).</li>
+</ol>
+<p>Before you hit the green “Play” button, follow the instructions to increase the “Periodic” sampling rate from 10 Hz to at least 40 Hz or greater.</p>
+<p>Click the green Play button, and then set your device gently swinging for about 60 seconds. Don’t touch it while it’s swinging.</p>
+<p>Click the stop button.</p>
+<p>You should see a graph of the acceleration data.</p>
+<p>Click the “Share” icon at the top, shaped kinda like this: &lt;: , then click the “Export Data” button, and then email yourself the data. You should receive an email with the ExportedData.csv file.</p>
+<blockquote>
+<p>Thus far, I have been considering <span class="math inline">\(H_0s\)</span> in their most general sense–as propositions about the state of affairs in a population, more particularly, as some specified value of a population parameter. Thus, “the population mean difference is 4” may be an <span class="math inline">\(H_0\)</span>, as may be “the proportion of males in this population is .75” and “the correlation in this population is .20.” But as almost universally used, the null in <span class="math inline">\(H_0\)</span> is taken to mean nil, zero….My work in power analysis led me to realize that the nil hypothesis is always false. Cohen (1994).</p>
+</blockquote>
+<!-- For your first assignment, you are going to collect some data using your smartphone or tablet. You will then analyze these data during our first lab meeting next Thur.
+
+Your smartphone is packed full of sensors. You are going to collect data from one of these sensors: the on-board accelerometer. 
+
+Basically, you are going to turn your smartphone into a pendulum by letting it swing gently on a string (or its charging cable) for about 1 minute while you collect data from the accelerometer. 
+
+Here’s what you need to do: -->
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//grasshoppermouse.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-59181618-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+
