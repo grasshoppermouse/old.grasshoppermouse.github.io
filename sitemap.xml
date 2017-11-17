@@ -2,93 +2,83 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/2017/11/15/pca-new-coordinate-system-same-data/</loc>
+    <loc>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</loc>
     <lastmod>2017-11-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2017/10/22/testing-a-non-nil-null/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
+    <loc>http://grasshoppermouse.github.io/about/</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2017/10/18/put-your-data-in-an-r-package/</loc>
+    <loc>http://grasshoppermouse.github.io/2017/10/18/put-your-data-in-an-r-package/</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2016/03/07/academic-success-is-either-a-crapshoot-or-a-scam.-john-tukeys-road-to-redemption/</loc>
-    <lastmod>2016-03-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</loc>
+    <loc>http://grasshoppermouse.github.io/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</loc>
     <lastmod>2015-06-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</loc>
+    <loc>http://grasshoppermouse.github.io/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</loc>
     <lastmod>2015-05-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2015/05/15/im-a-sucker-for-a-good-theory/</loc>
+    <loc>http://grasshoppermouse.github.io/2015/05/15/im-a-sucker-for-a-good-theory/</loc>
     <lastmod>2015-05-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2015/04/19/is-pregnancy-immunosuppression-a-myth/</loc>
+    <loc>http://grasshoppermouse.github.io/2015/04/19/is-pregnancy-immunosuppression-a-myth/</loc>
     <lastmod>2015-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>http://grasshoppermouse.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>http://grasshoppermouse.github.io/</loc>
     <lastmod>2017-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>http://grasshoppermouse.github.io/post/</loc>
     <lastmod>2017-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/r/</loc>
+    <loc>http://grasshoppermouse.github.io/tags/r/</loc>
     <lastmod>2017-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2017-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/reproducible-research/</loc>
+    <loc>http://grasshoppermouse.github.io/categories/r/</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/reproducible-research/</loc>
+    <loc>http://grasshoppermouse.github.io/tags/reproducible-research/</loc>
     <lastmod>2017-10-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>http://grasshoppermouse.github.io/categories/reproducible-research/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://grasshoppermouse.github.io/tags/</loc>
     <lastmod>2017-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

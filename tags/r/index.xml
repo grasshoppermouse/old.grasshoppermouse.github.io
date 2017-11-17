@@ -2,40 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Ed Hagen</title>
-    <link>/tags/r/</link>
+    <link>http://grasshoppermouse.github.io/tags/r/</link>
     <description>Recent content in R on Ed Hagen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://grasshoppermouse.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PCA: new coordinate system, same data</title>
-      <link>/2017/11/15/pca-new-coordinate-system-same-data/</link>
+      <link>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</link>
       <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/11/15/pca-new-coordinate-system-same-data/</guid>
+      <guid>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</guid>
       <description>There are many ways to teach Principal Component Analysis (PCA). This way is mine.
 The first constellation I learned to recognize was the Big Dipper. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the star at the end of the handle has different pairs of \(x\) and \(y\) coordinates, yet it is easy to recognize it as the same star:</description>
     </item>
     
     <item>
-      <title>Testing a non-nil null: an exercise</title>
-      <link>/2017/10/22/testing-a-non-nil-null/</link>
-      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/2017/10/22/testing-a-non-nil-null/</guid>
-      <description>Because physical theories typically predict numerical values, an improvement in experimental precision reduces the tolerance range and hence increases corroborability. In most psychological research, improved power of a statistical design leads to a prior probability approaching 1⁄2 of finding a significant difference in the theoretically predicted direction. Hence the corroboration yielded by “success” is very weak, and becomes weaker with increased precision. “Statistical significance” plays a logical role in psychology precisely the reverse of its role in physics.</description>
-    </item>
-    
-    <item>
       <title>Put your data in an R package</title>
-      <link>/2017/10/18/put-your-data-in-an-r-package/</link>
+      <link>http://grasshoppermouse.github.io/2017/10/18/put-your-data-in-an-r-package/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/10/18/put-your-data-in-an-r-package/</guid>
+      <guid>http://grasshoppermouse.github.io/2017/10/18/put-your-data-in-an-r-package/</guid>
       <description>I used to write long R scripts that imported data files, created new variables, reshaped the data, reshaped it again, and spit out results along the way, all in one file.
 That worked so long as I never wanted to use that data again. But what if I did? Should I just tack on more code for the new analysis, and then even more code for yet more analyses? That approach will litter your environment with objects that are irrelevant for, and might even interfere with, a particular analysis.</description>
     </item>
