@@ -146,17 +146,9 @@ knitr::kable(head(pendulum))</code></pre>
 </tbody>
 </table>
 <p>The y-axis is the long axis of the phone, so that’s the vector we want. Here’s what the data look like:</p>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## Loading tidyverse: ggplot2
-## Loading tidyverse: tibble
-## Loading tidyverse: tidyr
-## Loading tidyverse: readr
-## Loading tidyverse: purrr
-## Loading tidyverse: dplyr</code></pre>
-<pre><code>## Conflicts with tidy packages ----------------------------------------------</code></pre>
-<pre><code>## filter(): dplyr, stats
-## lag():    dplyr, stats</code></pre>
-<pre class="r"><code> # Easier names
+<pre class="r"><code>library(tidyverse)
+
+ # Easier names
 names(pendulum) &lt;- c(&#39;time&#39;, &#39;ax&#39;, &#39;ay&#39;, &#39;az&#39;, &#39;ar&#39;)
 
 # Trim the beginning and end, when I&#39;m holding the phone
@@ -164,8 +156,12 @@ pendulum &lt;-
   pendulum %&gt;% 
   dplyr::filter(time &gt;= 1, time &lt;= max(time) - 2)
 
-ggplot(pendulum, aes(x = time)) + geom_line(aes(y = ax), colour=&#39;red&#39;) + geom_line(aes(y = ay), colour=&#39;blue&#39;) + geom_line(aes(y = az), colour=&#39;black&#39;)</code></pre>
+ggplot(pendulum, aes(x = time)) + 
+  geom_line(aes(y = ax), colour=&#39;red&#39;) + 
+  geom_line(aes(y = ay), colour=&#39;blue&#39;) + 
+  geom_line(aes(y = az), colour=&#39;black&#39;)</code></pre>
 <p><img src="/post/2017-10-22-testing-a-non-nil-null_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><a href="http://thevirtuosi.blogspot.com/2011/08/fun-with-iphone-accelerometer.html" class="uri">http://thevirtuosi.blogspot.com/2011/08/fun-with-iphone-accelerometer.html</a></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Hang your device from a string (or maybe its charging cable) attached to something so that your device can swing freely like a pendulum.</li>
 </ol>

@@ -2,70 +2,89 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Ed Hagen</title>
-    <link>http://grasshoppermouse.github.io/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on Ed Hagen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://grasshoppermouse.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PCA: new coordinate system, same data</title>
-      <link>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</link>
+      <link>/2017/11/15/pca-new-coordinate-system-same-data/</link>
       <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</guid>
+      <guid>/2017/11/15/pca-new-coordinate-system-same-data/</guid>
       <description>There are many ways to teach Principal Component Analysis (PCA). This way is mine.
 The first constellation I learned to recognize was the Big Dipper. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the star at the end of the handle has different pairs of \(x\) and \(y\) coordinates, yet it is easy to recognize it as the same star:</description>
     </item>
     
     <item>
+      <title>Testing a non-nil null: an exercise</title>
+      <link>/2017/10/22/testing-a-non-nil-null/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/10/22/testing-a-non-nil-null/</guid>
+      <description>Because physical theories typically predict numerical values, an improvement in experimental precision reduces the tolerance range and hence increases corroborability. In most psychological research, improved power of a statistical design leads to a prior probability approaching 1⁄2 of finding a significant difference in the theoretically predicted direction. Hence the corroboration yielded by “success” is very weak, and becomes weaker with increased precision. “Statistical significance” plays a logical role in psychology precisely the reverse of its role in physics.</description>
+    </item>
+    
+    <item>
       <title>Put your data in an R package</title>
-      <link>http://grasshoppermouse.github.io/2017/10/18/put-your-data-in-an-r-package/</link>
+      <link>/2017/10/18/put-your-data-in-an-r-package/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2017/10/18/put-your-data-in-an-r-package/</guid>
+      <guid>/2017/10/18/put-your-data-in-an-r-package/</guid>
       <description>I used to write long R scripts that imported data files, created new variables, reshaped the data, reshaped it again, and spit out results along the way, all in one file.
 That worked so long as I never wanted to use that data again. But what if I did? Should I just tack on more code for the new analysis, and then even more code for yet more analyses? That approach will litter your environment with objects that are irrelevant for, and might even interfere with, a particular analysis.</description>
     </item>
     
     <item>
+      <title>Academic success is either a crapshoot or a scam. John Tukey&#39;s road to redemption</title>
+      <link>/2016/03/07/academic-success-is-either-a-crapshoot-or-a-scam.-john-tukeys-road-to-redemption/</link>
+      <pubDate>Mon, 07 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/03/07/academic-success-is-either-a-crapshoot-or-a-scam.-john-tukeys-road-to-redemption/</guid>
+      <description>Academic success is largely determined by a count of one&amp;rsquo;s publications vs. years since entering graduate school, with publications weighted by the prestige of the journal in which they appear. So, the gals and guys with the most pubs must be the best scholars, right? I&amp;rsquo;ve been playing by those rules, but it&amp;rsquo;s increasingly clear that those rules are leading to a lot of crappy scholarship.
+A publication is supposed to report an important new fact about the world.</description>
+    </item>
+    
+    <item>
       <title>Monkey butts, menstrual cycles, sex, and the color pink. The statistical crisis in science.</title>
-      <link>http://grasshoppermouse.github.io/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</link>
+      <link>/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</link>
       <pubDate>Sat, 27 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</guid>
+      <guid>/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</guid>
       <description>A couple of years ago, when I was starting a new project that used cross-national data, I picked up a popular statistics textbook by Andrew Gelman and Jennifer Hill because Gelman is known for his analysis of voting patterns across US states, which is conceptually similar to analysis of data across countries. I decided to google Gelman, a prominent statistics professor at Columbia, to see if he had papers on his website that would provide detailed, published examples of these kinds of analyses (&amp;lsquo;bout ready to head back to Facebook?</description>
     </item>
     
     <item>
       <title>Pavlov&#39;s dogs, dopamine and drug use</title>
-      <link>http://grasshoppermouse.github.io/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</link>
+      <link>/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</link>
       <pubDate>Sat, 16 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</guid>
+      <guid>/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</guid>
       <description>Findings from studies investigating only stimulants (generally cocaine or amphetamine) were often discussed as though they applied to all addictions, even though there was no evidence for such an assumption. (Nutt et al. 2015)
  Is it possible to get all the facts right, but still get the explanation wrong? That can happen to anyone. Nutt et al. (2015), writing in Nature Reviews Neuroscience, argue that it&amp;rsquo;s happened to an entire subfield, the neuroscience of substance use and addiction.</description>
     </item>
     
     <item>
       <title>I&#39;m a sucker for a good theory</title>
-      <link>http://grasshoppermouse.github.io/2015/05/15/im-a-sucker-for-a-good-theory/</link>
+      <link>/2015/05/15/im-a-sucker-for-a-good-theory/</link>
       <pubDate>Fri, 15 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2015/05/15/im-a-sucker-for-a-good-theory/</guid>
+      <guid>/2015/05/15/im-a-sucker-for-a-good-theory/</guid>
       <description>I&amp;rsquo;m a sucker for a good theory.
 After getting my BA, I had no idea what I wanted to do with my life. A friend, perhaps exasperated with my refusal to commit to a career, introduced me to her brother-in-law, Bruce Novak, who had just gotten a position in the UC Berkeley Department of Chemistry. Bruce had recently finished his PhD at Cal Tech (under Grubbs, who, to name drop, would later win the Nobel Prize in Chemistry).</description>
     </item>
     
     <item>
       <title>Is pregnancy immunosuppression a myth?</title>
-      <link>http://grasshoppermouse.github.io/2015/04/19/is-pregnancy-immunosuppression-a-myth/</link>
+      <link>/2015/04/19/is-pregnancy-immunosuppression-a-myth/</link>
       <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2015/04/19/is-pregnancy-immunosuppression-a-myth/</guid>
+      <guid>/2015/04/19/is-pregnancy-immunosuppression-a-myth/</guid>
       <description>My grad student Caity Placek is working on behavioral immunity during pregnancy. Behavioral immunity refers to psychological adaptations that help defend against pathogens; avoidance of sick people would be a possible example.
 Caity&amp;rsquo;s results suggest that aversion to meat in pregnancy is related to infection risk, especially in the first trimester. This supports an influential hypothesis put forward in 2000 by Flaxman and Sherman that these aversions are due to the immunosuppression that also occurs early in pregnancy.</description>
     </item>
