@@ -95,7 +95,8 @@ ggplot(d, aes(height, weight)) +
   geom_point(x = 0, y = 0, colour = &#39;red&#39;, size = 3) +
   labs(title = &quot;!Kung heights and weights&quot;, subtitle = &quot;Red dot at the origin of the coordinate system.&quot;)</code></pre>
 <p><img src="/post/2017-11-15-pca-new-coordinate-system-same-data_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p>Most students would (correctly) interpret this plot as depicting the relationship between height and weight. There is another way.</p>
+<p>Most students would (correctly) interpret this plot as depicting the relationship between height and weight.</p>
+<p>There is another way.</p>
 <p>Although each star in the Big Dipper is also described by two variables – an <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinate (or an <a href="http://www.skyandtelescope.com/astronomy-resources/what-are-celestial-coordinates/">ascension and declination</a>) – both variables are in the <em>same units</em> (angles). This is an important reason why we can think about the Big Dipper in space without thinking about the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> values of each star.</p>
 <p>The first step on our journey is therefore to put our height and weight variables into the same units by <a href="https://en.wikipedia.org/wiki/Standard_score">standardizing them</a> (subtract the mean from each variable, and then divide it by its standard deviation):</p>
 <pre class="r"><code># Standardize each variable
