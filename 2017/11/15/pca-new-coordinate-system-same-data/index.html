@@ -321,9 +321,11 @@ sd(d$x)</code></pre>
 </tr>
 </tbody>
 </table>
-<p>The minus signs are reversed because the axes are rotated 180 degrees, but the variance is still maximized along the x-axis (remember, there are 2 rotations that will maximize the variance). The <code>prcomp</code> function does not find these rotations in the same way we did, but the results are the same, as you can see.</p>
-<p>In summary, principal components are simply a new orthogonal (perpendicular) coordinate system for your data, rotated so the variance of your data is maximized along the first axis (PC1); then, rotating around the first axis, the variance of data is again maximized along the second axis (PC2), which is perpendicular to the first; and so forth, until the directions of all axes are specified.</p>
+<p>The minus signs are reversed because the axes are rotated 180 degrees, but the variance is still maximized along the x-axis (remember, there are 2 rotations that will maximize the variance).</p>
+<p>In summary, principal components are simply a new orthogonal (perpendicular) coordinate system for your data, rotated so the variance of your data is maximized along the first axis (PC1); then, rotating around the first axis, the remaining variance is maximized along the second axis (PC2), which is perpendicular to the first; and so forth, until the directions of all axes are specified. Thus, there will be as many principal components as there are dimensions in your data (i.e., number of variables), and the variance will decrease across each successive component across each successive component.</p>
 <p>There are many uses of this new coordinate system. In our example, 97% of the variance in our data falls along PC1. Thus, we might interpret PC1, which is a combination of height and weight, as something like <em>size</em>. By rotating our coordinate system, we have identified underlying “structure” in our data. For 2-d data like our example, PCA is not that useful. But when our data have many dimensions, PCA and related techniques can find structure that would be difficult or impossible to find without them.</p>
+<hr />
+<p><em>Note: The <code>prcomp</code> and other PCA functions do not find these rotations in the same way we did. Instead, they use methods like singular value decomposition, which you can read about on <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">wikipedia</a>.</em></p>
 
     </div>
   </article>
