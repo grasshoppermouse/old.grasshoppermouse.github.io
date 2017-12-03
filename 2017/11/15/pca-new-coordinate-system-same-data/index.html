@@ -57,7 +57,7 @@
 
   <article class="article">
     
-    <span class="article-duration">9 min read</span>
+    <span class="article-duration">10 min read</span>
     
 
     <h1 class="article-title">PCA: new coordinate system, same data</h1>
@@ -79,8 +79,8 @@
 
 <p>The point is: we recognize the Big Dipper, not by the location of the stars in the sky, but by the location of each star <em>relative to the others</em>.</p>
 <p>The first and most important step in understanding PCA is to think about your data in the same way that you think about constellations: it’s the relationships between your data points, not their individual values, that matters.</p>
-<p>In a scientific study, we typically measure multiple values on each person (or population, or whatever), e.g., age, height, weight, sex, and so forth.</p>
-<p>The mental frame shift to make is to think about each data point as a single “star” in the sky, and all the data points as a constellation of stars in the sky. In other words, you can think about each “unit” in the data – person or observation or “row” – as one point in an <span class="math inline">\(N\)</span>-dimensional Euclidean space, where <span class="math inline">\(N\)</span> is the number of variables. Viewed this way, the data has a “structure” determined by the relationships of each observations to the others that will be preserved even if the coordinate system is changed.</p>
+<p>In a scientific study, we typically measure multiple values on each person (or population, or whatever), e.g., age, height, weight, sex, and so forth. The mental frame shift to make is to think about the collection of such values on a single person as a single data point, each such data point as a single “star” in the sky, and all the data points as a constellation of stars in the sky. If we had two measurements per person – e.g., height and weight – then each person (each data point) has two coordinates; if we had three measurements per person – e.g., height, weight, and age – then each person (each data point) has three coordinates, and so forth.</p>
+<p>In general, you can think about each “unit” in the data – person or observation or “row” – as one point in an <span class="math inline">\(N\)</span>-dimensional Euclidean space, where <span class="math inline">\(N\)</span> is the number of variables that you have measured. Viewed this way, the data has a “structure” determined by the relationships of each observations to the others that will be preserved even if the coordinate system is changed.</p>
 <p>Here is a concrete example with 2 variables per person – <em>height</em> and <em>weight</em> – and thus a 2-dimensional space of points:</p>
 <pre class="r"><code># Height and weight of !Kung individuals.
 # The !Kung are an ethnic group in
@@ -93,7 +93,7 @@ ggplot(d, aes(height, weight)) +
   scale_x_continuous(limits = c(0,200)) +
   scale_y_continuous(limits = c(0,70)) +
   geom_point(x = 0, y = 0, colour = &#39;red&#39;, size = 3) +
-  labs(title = &quot;!Kung heights and weights&quot;, subtitle = &quot;Red dot at the origin of the coordinate system.&quot;)</code></pre>
+  labs(title = &quot;!Kung heights and weights&quot;, subtitle = &quot;Each black dot represents one person.\nThe red dot indicates the origin of the coordinate system.&quot;)</code></pre>
 <p><img src="/post/2017-11-15-pca-new-coordinate-system-same-data_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <p>Most students would (correctly) interpret this plot as depicting the relationship between height and weight.</p>
 <p>There is another way.</p>
@@ -107,7 +107,7 @@ ggplot(d, aes(zheight, zweight)) +
   geom_point(alpha = 0.5) +
   geom_point(x = 0, y = 0, colour = &#39;red&#39;, size = 3) +
   coord_fixed(xlim = c(-4, 3), ylim = c(-3, 3)) +
-  labs(title = &quot;Standardized !Kung heights and weights&quot;, subtitle = &quot;Red dot at the origin of the coordinate system.&quot;)</code></pre>
+  labs(title = &quot;Standardized !Kung heights and weights&quot;, subtitle = &quot;Each black dot represents one person.\nThe red dot indicates the origin of the coordinate system.&quot;)</code></pre>
 <p><img src="/post/2017-11-15-pca-new-coordinate-system-same-data_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Many folks would (correctly) interpret these new variables as transformed versions of the original data. However, I would like you to instead see this as a transformation of the <em>coordinate system</em>: we have translated the origin of the coordinate system to the middle of the data (the red dot), and we have put the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> axes on the same scale (1 unit of x equals 1 unit of y). The data remain the same.</p>
 <p>The translation of the origin to the center of the data is useful because positive values on the <span class="math inline">\(x\)</span>-axis now indicate values that are greater than the mean, and negative values now indicate values that are less than the mean. The same goes for the <span class="math inline">\(y\)</span>-axis. The translation of the origin makes it easy to identify individuals whose heights and weights are above or below average. Transforming the coordinate system (not the data!) can help us interpret the data – the new origin has advantages over the original origin.</p>
@@ -123,7 +123,7 @@ ggplot(d, aes(x, y)) +
   geom_point(alpha = 0.5) +
   geom_point(x = 0, y = 0, colour = &#39;red&#39;, size = 3) +
   coord_fixed(xlim = c(-4, 3), ylim = c(-3, 3)) +
-  labs(title = &quot;Rotated !Kung heights and weights&quot;, subtitle = &quot;Red dot at the origin of the coordinate system.&quot;)</code></pre>
+  labs(title = &quot;Rotated !Kung heights and weights&quot;, subtitle = &quot;Each black dot represents one person.\nThe red dot indicates the origin of the coordinate system.&quot;)</code></pre>
 <p><img src="/post/2017-11-15-pca-new-coordinate-system-same-data_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Here are the pairs of coordinates of our first 6 data points in each of our 3 different coordinate systems (the original, standardized, and rotated coordinate system):</p>
 <table>
@@ -235,7 +235,7 @@ ggplot(d, aes(x, y)) +
   geom_point(alpha = 0.5) +
   geom_point(x = 0, y = 0, colour = &#39;red&#39;, size = 3) +
   coord_fixed(xlim = c(-4, 3), ylim = c(-3, 3)) +
-  labs(title = &quot;!Kung heights and weights rotated to maximize variance along x-axis&quot;, subtitle = &quot;Red dot at the origin of the coordinate system.&quot;)</code></pre>
+  labs(title = &quot;!Kung heights and weights rotated to maximize variance along x-axis&quot;, subtitle = &quot;Each black dot represents one person.\nThe red dot indicates the origin of the coordinate system.&quot;)</code></pre>
 <p><img src="/post/2017-11-15-pca-new-coordinate-system-same-data_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Guess what? The <span class="math inline">\(x\)</span>-axis is principal component 1 (PC1), and the <span class="math inline">\(y\)</span>-axis is principle component 2 (PC2), as we can confirm by comparing our results to those from R’s <code>prcomp</code> (principal component) function:</p>
 <pre class="r"><code># Compute PCA using the standard R function
@@ -325,7 +325,9 @@ sd(d$x)</code></pre>
 <p>In summary, principal components are simply a new orthogonal (perpendicular) coordinate system for your data, rotated so the variance of your data is maximized along the first axis (PC1); then, rotating around the first axis, the remaining variance is maximized along the second axis (PC2), which is perpendicular to the first; and so forth, until the directions of all axes are specified. Thus, there will be as many principal components as there are dimensions in your data (i.e., number of variables), and the variance will decrease across each successive component across each successive component.</p>
 <p>There are many uses of this new coordinate system. In our example, 97% of the variance in our data falls along PC1. Thus, we might interpret PC1, which is a combination of height and weight, as something like <em>size</em>. By rotating our coordinate system, we have identified underlying “structure” in our data. For 2-d data like our example, PCA is not that useful. But when our data have many dimensions, PCA and related techniques can find structure that would be difficult or impossible to find without them.</p>
 <hr />
-<p><em>Note: The <code>prcomp</code> and other PCA functions do not find these rotations in the same way we did. Instead, they use methods like singular value decomposition, which you can read about on <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">wikipedia</a>.</em></p>
+<p><em>Note #1: The <code>prcomp</code> and other PCA functions do not find these rotations in the same way we did. Instead, they use methods like singular value decomposition, which you can read about on <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">wikipedia</a>.</em></p>
+<p><em>Note #2: You might have heard of rotation after PCA, or terms like varimax rotation. These also seek useful rotations, but are distinct from PCA. You can read more about them, and their relationship to PCA <a href="https://stats.stackexchange.com/questions/612/is-pca-followed-by-a-rotation-such-as-varimax-still-pca">here</a>, <a href="https://stats.stackexchange.com/questions/151653/what-is-the-intuitive-reason-behind-doing-rotations-in-factor-analysis-pca-how">here</a>, and <a href="https://stats.stackexchange.com/questions/160422/what-are-rotated-and-unrotated-principal-components-given-that-pca-always-r">here</a>.</em></p>
+<p><em>Note #3: There is a great set of alternative explanations of PCA <a href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues">here</a> .</em></p>
 
     </div>
   </article>
