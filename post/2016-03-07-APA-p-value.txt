@@ -1,6 +1,0 @@
----
-layout: post
-title: "Academic success is either a crapshoot or a scam. John Tukey's road to redemption"
-author: "Ed Hagen"
----
-
