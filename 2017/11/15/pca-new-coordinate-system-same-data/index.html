@@ -100,8 +100,8 @@ ggplot(d, aes(height, weight)) +
 <p>Although each star in the Big Dipper is also described by two variables – an <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinate (or an <a href="http://www.skyandtelescope.com/astronomy-resources/what-are-celestial-coordinates/">ascension and declination</a>) – both variables are in the <em>same units</em> (angles). This is an important reason why we can think about the Big Dipper in space without thinking about the <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> values of each star.</p>
 <p>The first step on our journey is therefore to put our height and weight variables into the same units by <a href="https://en.wikipedia.org/wiki/Standard_score">standardizing them</a> (subtract the mean from each variable, and then divide it by its standard deviation):</p>
 <pre class="r"><code># Standardize each variable
-d$zheight &lt;- scale(d$height)
-d$zweight &lt;- scale(d$weight)
+d$zheight &lt;- scale(d$height)[,1]
+d$zweight &lt;- scale(d$weight)[,1]
 # Plot
 ggplot(d, aes(zheight, zweight)) + 
   geom_point(alpha = 0.5) +

@@ -6,10 +6,19 @@
     <description>Recent content in Reproducible Research on Ed Hagen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://grasshoppermouse.github.io/tags/reproducible-research/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data dredging is the Dionysian soul of science</title>
+      <link>http://grasshoppermouse.github.io/2018/01/01/data-dredging-is-the-dionysian-soul-of-science/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://grasshoppermouse.github.io/2018/01/01/data-dredging-is-the-dionysian-soul-of-science/</guid>
+      <description>Figure 1: Good and Evil Angels. Plate 4 of The Marriage of Heaven and Hell. From The William Blake Archive.  Yin and Yang. Apollo and Dionysus. Heaven and Hell. Id and Superego. Reason and Emotion. Spock and McCoy. Many intellectual and moral frameworks are structured around two, often opposing, elements. If one element gains the upper hand over the other, beware. William Blake, for example, in The Marriage of Heaven and Hell, took aim at the imbalance he saw in Christian theology.</description>
+    </item>
     
     <item>
       <title>Put your data in an R package</title>
