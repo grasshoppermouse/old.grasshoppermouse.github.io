@@ -2,40 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ed Hagen</title>
-    <link>http://grasshoppermouse.github.io/</link>
+    <link>/</link>
     <description>Recent content on Ed Hagen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://grasshoppermouse.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The replication crisis: our statistics don&#39;t suck, our theories do</title>
-      <link>http://grasshoppermouse.github.io/2018/01/16/the-replication-crisis-our-statistics-don-t-suck-our-theories-do/</link>
+      <link>/2018/01/16/the-replication-crisis-our-statistics-don-t-suck-our-theories-do/</link>
       <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2018/01/16/the-replication-crisis-our-statistics-don-t-suck-our-theories-do/</guid>
+      <guid>/2018/01/16/the-replication-crisis-our-statistics-don-t-suck-our-theories-do/</guid>
       <description>Arthur: Brother Maynard! Bring up the Holy Hand Grenade!….How does it, um– how does it work?
   Second Brother: And the Lord spake, saying, “First shalt thou take out the Holy Pin. Then, shalt thou count to three. No more. No less. Three shalt be the number thou shalt count, and the number of the counting shall be three. Four shalt thou not count, nor either count thou two, excepting that thou then proceed to three.</description>
     </item>
     
     <item>
       <title>Data dredging is the Dionysian soul of science</title>
-      <link>http://grasshoppermouse.github.io/2018/01/01/data-dredging-is-the-dionysian-soul-of-science/</link>
+      <link>/2018/01/01/data-dredging-is-the-dionysian-soul-of-science/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2018/01/01/data-dredging-is-the-dionysian-soul-of-science/</guid>
+      <guid>/2018/01/01/data-dredging-is-the-dionysian-soul-of-science/</guid>
       <description>Figure 1: Good and Evil Angels. Plate 4 of The Marriage of Heaven and Hell. From The William Blake Archive.  Yin and Yang. Apollo and Dionysus. Heaven and Hell. Id and Superego. Reason and Emotion. Spock and McCoy. Many intellectual and moral frameworks are structured around two, often opposing, elements. If one element gains the upper hand over the other, beware. William Blake, for example, in The Marriage of Heaven and Hell, took aim at the imbalance he saw in Christian theology.</description>
     </item>
     
     <item>
+      <title>Napoleon Chagnon and Brian Ferguson: birds of a theoretical feather?</title>
+      <link>/2017/12/12/napoleon-chagnon-and-brian-ferguson-birds-of-a-theoretical-feather/</link>
+      <pubDate>Tue, 12 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/12/napoleon-chagnon-and-brian-ferguson-birds-of-a-theoretical-feather/</guid>
+      <description> [W]ars occur when those who decide to start a war believe it is in their practical, material self-interest to do so. R. Brian Ferguson
+ </description>
+    </item>
+    
+    <item>
       <title>Academic success is either a crapshoot or a scam</title>
-      <link>http://grasshoppermouse.github.io/2017/12/05/academic-success-is-either-a-crapshoot-or-a-scam/</link>
+      <link>/2017/12/05/academic-success-is-either-a-crapshoot-or-a-scam/</link>
       <pubDate>Tue, 05 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2017/12/05/academic-success-is-either-a-crapshoot-or-a-scam/</guid>
+      <guid>/2017/12/05/academic-success-is-either-a-crapshoot-or-a-scam/</guid>
       <description>Nature just published five brief commentaries by statisticians on the reproducibility crisis:
  As debate rumbles on about how and how much poor statistics is to blame for poor reproducibility, Nature asked influential statisticians to recommend one change to improve science. The common theme? The problem is not our maths, but ourselves.
  The problem is ourselves, but it has little to do with: a failure to adjust for human cognition (Leek), relying on statistical “significance” (McShane and Gelman), failure to appreciate false positive risk (Colquhoun), or not sharing analysis and results (Nuijten) (although addressing all these things would be good).</description>
@@ -43,69 +53,78 @@
     
     <item>
       <title>PCA: new coordinate system, same data</title>
-      <link>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</link>
+      <link>/2017/11/15/pca-new-coordinate-system-same-data/</link>
       <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</guid>
+      <guid>/2017/11/15/pca-new-coordinate-system-same-data/</guid>
       <description>There are many ways to teach Principal Component Analysis (PCA). This way is mine.
 The first constellation I learned to recognize was the Big Dipper. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the star at the end of the handle has different pairs of \(x\) and \(y\) coordinates, yet it is easy to recognize it as the same star:</description>
     </item>
     
     <item>
+      <title>Testing an non-nill null</title>
+      <link>/2017/10/22/testing-a-non-nil-null/</link>
+      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/10/22/testing-a-non-nil-null/</guid>
+      <description>Inspired by Meehl (1967), I decided to design an exercise for my Anthro Quantitive Methods course that would illustrate a non-nil null hypothesis: one that, unlike the standard “nil” hypothesis of “\(~H_0 = 0\)” (Cohen 1994), would be, say \(H_0 = 3\). Because most of the assigned articles for the semester would relentlessly attack Null Hypothesis Significance Testing (NHST), I wanted students to first appreciate that, applied to the right sort of problem, NHST was a powerful tool to challenge our theories (not confirm them!</description>
+    </item>
+    
+    <item>
       <title>About</title>
-      <link>http://grasshoppermouse.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>I&amp;rsquo;m Ed Hagen, a biological anthropologist at Washington State University.
 Grasshopper mice are carnivorous rodents, preying on insects, scorpions, snakes, and even other mice. They defend their territories by howling in ultrasonic.</description>
     </item>
     
     <item>
       <title>Put your data in an R package</title>
-      <link>http://grasshoppermouse.github.io/2017/10/18/put-your-data-in-an-r-package/</link>
+      <link>/2017/10/18/put-your-data-in-an-r-package/</link>
       <pubDate>Wed, 18 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2017/10/18/put-your-data-in-an-r-package/</guid>
+      <guid>/2017/10/18/put-your-data-in-an-r-package/</guid>
       <description>I used to write long R scripts that imported data files, created new variables, reshaped the data, reshaped it again, and spit out results along the way, all in one file.
 That worked so long as I never wanted to use that data again. But what if I did? Should I just tack on more code for the new analysis, and then even more code for yet more analyses? That approach will litter your environment with objects that are irrelevant for, and might even interfere with, a particular analysis.</description>
     </item>
     
     <item>
       <title>Monkey butts, menstrual cycles, sex, and the color pink. The statistical crisis in science.</title>
-      <link>http://grasshoppermouse.github.io/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</link>
+      <link>/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</link>
       <pubDate>Sat, 27 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</guid>
+      <guid>/2015/06/27/monkey-butts-menstrual-cycles-sex-and-the-color-pink-the-statistical-crisis-in-science/</guid>
       <description>A couple of years ago, when I was starting a new project that used cross-national data, I picked up a popular statistics textbook by Andrew Gelman and Jennifer Hill because Gelman is known for his analysis of voting patterns across US states, which is conceptually similar to analysis of data across countries. I decided to google Gelman, a prominent statistics professor at Columbia, to see if he had papers on his website that would provide detailed, published examples of these kinds of analyses (&amp;lsquo;bout ready to head back to Facebook?</description>
     </item>
     
     <item>
       <title>Pavlov&#39;s dogs, dopamine and drug use</title>
-      <link>http://grasshoppermouse.github.io/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</link>
+      <link>/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</link>
       <pubDate>Sat, 16 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</guid>
+      <guid>/2015/05/16/pavlovs-dogs-dopamine-and-drug-use/</guid>
       <description>Findings from studies investigating only stimulants (generally cocaine or amphetamine) were often discussed as though they applied to all addictions, even though there was no evidence for such an assumption. (Nutt et al. 2015)
  Is it possible to get all the facts right, but still get the explanation wrong? That can happen to anyone. Nutt et al. (2015), writing in Nature Reviews Neuroscience, argue that it&amp;rsquo;s happened to an entire subfield, the neuroscience of substance use and addiction.</description>
     </item>
     
     <item>
       <title>I&#39;m a sucker for a good theory</title>
-      <link>http://grasshoppermouse.github.io/2015/05/15/im-a-sucker-for-a-good-theory/</link>
+      <link>/2015/05/15/im-a-sucker-for-a-good-theory/</link>
       <pubDate>Fri, 15 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2015/05/15/im-a-sucker-for-a-good-theory/</guid>
+      <guid>/2015/05/15/im-a-sucker-for-a-good-theory/</guid>
       <description>I&amp;rsquo;m a sucker for a good theory.
 After getting my BA, I had no idea what I wanted to do with my life. A friend, perhaps exasperated with my refusal to commit to a career, introduced me to her brother-in-law, Bruce Novak, who had just gotten a position in the UC Berkeley Department of Chemistry. Bruce had recently finished his PhD at Cal Tech (under Grubbs, who, to name drop, would later win the Nobel Prize in Chemistry).</description>
     </item>
     
     <item>
       <title>Is pregnancy immunosuppression a myth?</title>
-      <link>http://grasshoppermouse.github.io/2015/04/19/is-pregnancy-immunosuppression-a-myth/</link>
+      <link>/2015/04/19/is-pregnancy-immunosuppression-a-myth/</link>
       <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://grasshoppermouse.github.io/2015/04/19/is-pregnancy-immunosuppression-a-myth/</guid>
+      <guid>/2015/04/19/is-pregnancy-immunosuppression-a-myth/</guid>
       <description>My grad student Caity Placek is working on behavioral immunity during pregnancy. Behavioral immunity refers to psychological adaptations that help defend against pathogens; avoidance of sick people would be a possible example.
 Caity&amp;rsquo;s results suggest that aversion to meat in pregnancy is related to infection risk, especially in the first trimester. This supports an influential hypothesis put forward in 2000 by Flaxman and Sherman that these aversions are due to the immunosuppression that also occurs early in pregnancy.</description>
     </item>
