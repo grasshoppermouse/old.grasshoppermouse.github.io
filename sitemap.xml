@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>http://grasshoppermouse.github.io/2018/01/16/the-replication-crisis-our-statistics-don-t-suck-our-theories-do/</loc>
@@ -69,26 +70,26 @@
   </url>
   
   <url>
-    <loc>http://grasshoppermouse.github.io/categories/r/</loc>
-    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://grasshoppermouse.github.io/tags/r/</loc>
     <lastmod>2017-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://grasshoppermouse.github.io/categories/reproducible-research/</loc>
-    <lastmod>2018-01-16T00:00:00+00:00</lastmod>
+    <loc>http://grasshoppermouse.github.io/categories/r/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://grasshoppermouse.github.io/tags/reproducible-research/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://grasshoppermouse.github.io/categories/reproducible-research/</loc>
+    <lastmod>2018-01-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
