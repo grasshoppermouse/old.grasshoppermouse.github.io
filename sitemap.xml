@@ -75,26 +75,26 @@
   </url>
   
   <url>
-    <loc>http://grasshoppermouse.github.io/categories/r/</loc>
-    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://grasshoppermouse.github.io/tags/r/</loc>
     <lastmod>2017-11-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://grasshoppermouse.github.io/categories/reproducible-research/</loc>
-    <lastmod>2018-01-16T00:00:00+00:00</lastmod>
+    <loc>http://grasshoppermouse.github.io/categories/r/</loc>
+    <lastmod>2017-10-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://grasshoppermouse.github.io/tags/reproducible-research/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://grasshoppermouse.github.io/categories/reproducible-research/</loc>
+    <lastmod>2018-01-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
