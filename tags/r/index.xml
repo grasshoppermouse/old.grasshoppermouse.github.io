@@ -18,7 +18,7 @@
       
       <guid>http://grasshoppermouse.github.io/2017/11/15/pca-new-coordinate-system-same-data/</guid>
       <description>There are many ways to teach Principal Component Analysis (PCA). This way is mine.
-The first constellation I learned to recognize was the Big Dipper. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the star at the end of the handle has different pairs of \(x\) and \(y\) coordinates, yet it is easy to recognize it as the same star:</description>
+The first constellation I learned to recognize was the Big Dipper. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the stars have different \(x\) and \(y\) coordinates, yet it is easy to recognize them as the same stars:</description>
     </item>
     
     <item>

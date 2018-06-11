@@ -57,7 +57,7 @@
 
   <article class="article">
     
-    <span class="article-duration">10 min read</span>
+    <span class="article-duration">9 min read</span>
     
 
     <h1 class="article-title">PCA: new coordinate system, same data</h1>
@@ -68,7 +68,7 @@
 
     <div class="article-content">
       <p>There are many ways to teach Principal Component Analysis (PCA). This way is mine.</p>
-<p>The first constellation I learned to recognize was the <a href="https://en.wikipedia.org/wiki/Big_Dipper">Big Dipper</a>. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the star at the end of the handle has different pairs of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates, yet it is easy to recognize it as the same star:</p>
+<p>The first constellation I learned to recognize was the <a href="https://en.wikipedia.org/wiki/Big_Dipper">Big Dipper</a>. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the stars have different <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinates, yet it is easy to recognize them as the same stars:</p>
 
 <figure >
     
@@ -77,9 +77,9 @@
     
 </figure>
 
-<p>The point is: we recognize the Big Dipper, not by the location of the stars in the sky, but by the location of each star <em>relative to the others</em>.</p>
+<p>The point is: we recognize the Big Dipper, not by the specific location of the stars in the sky, but by the location of each star <em>relative to the others</em>.</p>
 <p>The first and most important step in understanding PCA is to think about your data in the same way that you think about constellations: it’s the relationships between your data points, not their individual values, that matters.</p>
-<p>In a scientific study, we typically measure multiple values on each person (or population, or whatever), e.g., age, height, weight, sex, and so forth. The mental frame shift to make is to think about the collection of such values on a single person as a single data point, each such data point as a single “star” in the sky, and all the data points as a constellation of stars in the sky. If we had two measurements per person – e.g., height and weight – then each person (each data point) has two coordinates; if we had three measurements per person – e.g., height, weight, and age – then each person (each data point) has three coordinates, and so forth.</p>
+<p>In a scientific study, we typically measure multiple values on each person (or population, or whatever), e.g., age, height, weight, sex, and so forth. The mental frame shift to make is to think about the collection of multiple values on a single person as a <em>single</em> data point — a single “star” in the sky — and all the data points as a constellation of stars in the sky. If we had two measurements per person – e.g., height and weight – then each person (each data point) has two coordinates; if we had three measurements per person – e.g., height, weight, and age – then each person (each data point) has three coordinates, and so forth.</p>
 <p>In general, you can think about each “unit” in the data – person or observation or “row” – as one point in an <span class="math inline">\(N\)</span>-dimensional Euclidean space, where <span class="math inline">\(N\)</span> is the number of variables that you have measured. Viewed this way, the data has a “structure” determined by the relationships of each observations to the others that will be preserved even if the coordinate system is changed.</p>
 <p>Here is a concrete example with 2 variables per person – <em>height</em> and <em>weight</em> – and thus a 2-dimensional space of points:</p>
 <pre class="r"><code># Height and weight of !Kung individuals.

@@ -6,9 +6,19 @@
     <description>Recent content in Categories on Ed Hagen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://grasshoppermouse.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Anthropology</title>
+      <link>http://grasshoppermouse.github.io/categories/anthropology/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://grasshoppermouse.github.io/categories/anthropology/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>R</title>
