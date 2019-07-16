@@ -6,10 +6,19 @@
     <description>Recent content on Ed Hagen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Should scientific publishing move to Github and friends?</title>
+      <link>/2019/07/12/should-scientific-publishing-move-to-github-and-friends/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/07/12/should-scientific-publishing-move-to-github-and-friends/</guid>
+      <description>TL;DR: Open access publishing has very high administrative overhead and is therefore too expensive. Github and similar services have substantial and perhaps insurmountable technical and funding advantages as publishing platforms. Scientific publications should therefore be git repos, created by the researchers themselves, that contain the manuscript, data, and analysis code, and that are hosted on, e.g., github, gitlab, bitbucket, sourceforge, and a few others. A ‘journal’ would just be a managed collection of repos.</description>
+    </item>
     
     <item>
       <title>A theory of natural selection, 5th century BC</title>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.30" />
+
+
+<title>Should scientific publishing move to Github and friends? - Ed Hagen</title>
+<meta property="og:title" content="Should scientific publishing move to Github and friends? - Ed Hagen">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="200"
+         height="300"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="http://anthro.vancouver.wsu.edu/faculty/hagen/">Ed Hagen@WSU</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">12 min read</span>
+    
+
+    <h1 class="article-title">Should scientific publishing move to Github and friends?</h1>
+
+    
+    <span class="article-date">2019/07/12</span>
+    
+
+    <div class="article-content">
+      <p><em>TL;DR: Open access publishing has very high administrative overhead and is therefore too expensive. Github and similar services have substantial and perhaps insurmountable technical and funding advantages as publishing platforms. Scientific publications should therefore be <a href="https://git-scm.com">git</a> repos, created by the researchers themselves, that contain the manuscript, data, and analysis code, and that are hosted on, e.g., <a href="https:github.com">github</a>, <a href="https:gitlab.com">gitlab</a>, <a href="https://bitbucket.org">bitbucket</a>, <a href="http://sourceforge.net/">sourceforge</a>, and a <a href="https://git.wiki.kernel.org/index.php/GitHosting">few others</a>. A ‘journal’ would just be a <a href="https://help.github.com/en/enterprise/2.16/admin/user-management/creating-organizations">managed collection</a> of repos. Reviews would be handled via <a href="https://help.github.com/en/articles/about-issues">issues</a>. Long-term archiving and minting of <a href="https://en.wikipedia.org/wiki/Digital_object_identifier">doi’s</a> would be handled by <a href="https://zenodo.org">zenodo</a> or equivalent data archiving services. Journal reputations would be based on the reputations of the editors, who are typically researchers themselves. </em></p>
+<p>Elsevier, the world’s largest publisher of scientific articles, just <a href="https://www.latimes.com/business/hiltzik/la-fi-uc-elsevier-20190711-story.html">cut off access</a> to its journals by the University of California, one of the world’s largest producers of scientific articles, because UC objected to Elsevier’s increasingly exorbitant subscription fees. Meanwhile, many funders of scientific research, mostly in Europe but also including the Gates Foundation, have signed on to <a href="https://en.wikipedia.org/wiki/Plan_S">Plan S</a>, which stipulates that research that is funded with money from supporting institutions must be published in open access journals or platforms.</p>
+<p>Open access journals are expensive, though, typically charging $1000 or more per article. The reason they are so expensive is that administration and software development is expensive. <a href="https://arxiv.org">arXiv.org</a>, the famous physics/math preprint server that hosts articles for free, has a relatively small <a href="https://arxiv.org/about/people/leadership_team">leadership team</a> of six people, yet salaries alone amount to more than <a href="https://confluence.cornell.edu/download/attachments/340896260/2019%20CY%20arXiv%20budget%20estimate.pdf?api=v2">$1.3 million/year</a>. Add in indirect costs, and the total is about $2 million/year, covered by grants, memberships, and Cornell. Their servers and misc expenses are less than 1/10 of the total.</p>
+<p>PLOS, PeerJ, and other open access journals cover their substantial administrative and development costs with publication fees that range from $1000-$3000/article, which is about what traditional journal publishers like Elsevier charge for open access.</p>
+<p>The <a href="https://cos.io">Center for Open Science (COS)</a> and <a href="http://osf.io">osf.io</a> offer free preprint, preregistration, and file hosting services (full disclosure: I use osf.io, and we received one of their $1000 preregistration awards). They currently have about 50 employees and are spending in the neighborhood of <a href="https://cos.io/about/our-finances/">$7 million/year</a>, which, as far as I can tell, comes mostly from <a href="https://cos.io/about/our-sponsors/">grants</a>. As COS itself <a href="https://docs.google.com/document/d/1sqz3appQ73vqa6fP1Gy8KK8HZpotoSGaiJC1XQuvREI/edit#heading=h.f1yiz05siagv">admits</a>, sustainability is a major concern, and will probably involve charging fees to stakeholder communities, e.g., universities.</p>
+<p>In sum, the multiple open science initiatives each have their own admin teams, incurring high administrative overhead, and are chasing a relatively small pool of users, many of whom have little funding or incentive to contribute to these public goods.</p>
+<div id="how-does-the-open-source-software-community-do-it-for-free" class="section level1">
+<h1>How does the open source software community do it for free?</h1>
+<p>The open source software community, like the science community, wants to give its products away for free in exchange for prestige. Their efforts have <a href="https://en.wikipedia.org/wiki/WorldWideWeb">transformed the planet</a>. Unlike science, however, open source developers pay nothing to publish their highly technical “documents” (code). How do they do it? In a word, <a href="https://github.com">Github</a>.</p>
+<p>If you don’t know what Github is I describe it in a bit more detail below. For now, think of it as an online service for collaborating on software development. The open source community is allowed to use Github for free because the tech industry benefits tremendously from open source code and the talent that produces it. Open source is therefore subsidized by the fees commercial firms pay to use Github, which has estimated annual revenues of $250 million, and was acquired last year by Microsoft for $7.5 billion. Microsoft’s annual revenue is $110 billion. Gitlab, a similar service, has $10.5 million in annual revenue, and recently received <a href="https://about.gitlab.com/2018/09/19/announcing-100m-series-d-funding/">$100 million in venture capital</a>. Atlassian, which owns Bitbucket, yet another such service, offers a number of commercial collaboration services and has about $1 billion in annual revenue.</p>
+<p>As of this writing, Github alone has over <a href="https://octoverse.github.com">30 million users working on close to 100 million projects</a>. The technological and financial investment in these platforms and the economies of scale are orders of magnitude larger than those enjoyed by any open science initiative.</p>
+</div>
+<div id="could-scientific-publishing-move-to-github" class="section level1">
+<h1>Could scientific publishing move to Github?</h1>
+<!-- I think [Github](http://github.com) and similar cloud-based services that facilitate global collaboration on open source software projects could be those open platforms.  -->
+<!-- (I will use the term 'Github' to refer to Github and all similar services, e.g., Gitlab, Bitbucket.) -->
+<p>In 2011, Marcio von Muhlen argued that academia needed a <a href="https://marciovm.com/i-want-a-github-of-science">Github of science</a>. He made three key points:</p>
+<ul>
+<li><p>Publishing is central to Academia, but its publishing system is outclassed by what Open Source software developers have in GitHub</p></li>
+<li><p>GitHub’s success is not just about openness, but also a prestige economy that rewards valuable content producers with credit and attention</p></li>
+<li><p>Open Science efforts like arXiv and PLoS ONE should follow GitHub’s lead and embrace the social web</p></li>
+</ul>
+<p>Each of these points is just as true today as it was then. The only thing I would add is that the Github of science should be…Github. The costs of hosting scientific articles on Github or similar services, such as Gitlab and Bitbucket, would be a rounding error.</p>
+<p>Moreover, much of science’s computational infrastructure is already developed on Github and friends. This includes the <a href="https://github.com/torvalds/linux">linux operating system</a>, <a href="https://github.com/python/cpython">python</a> and <a href="https://github.com/scipy/scipy">scipy</a>, <a href="https://github.com/tensorflow/tensorflow">machine learning frameworks</a>, <a href="https://github.com/tidyverse/tidyverse">key r packages</a>, and <a href="https://github.com/topics/scientific-computing">much more</a>.</p>
+<p>Just like it benefits from open source software, the business community benefits tremendously from science. Instead of researchers paying the <a href="https://doi.org/10.1371/journal.pone.0127502">scientific publishing oligopoly</a> hefty <a href="(https://www.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science)">fees</a> to publish tax-funded research, commercial businesses would subsidize the (small) cost for researchers to publish their research on git hosting services.</p>
+<p>Sounds fair to me.</p>
+<p>This proposal is not without risk. Microsoft’s purchase of Github, for instance, immediately <a href="https://www.forbes.com/sites/washingtonbytes/2018/08/29/microsoft-and-github-jaw-dropping-price-tag-brings-competitive-concerns/#67b0b8e95312">raised concerns</a> that it would use its control over Github to harm competitors that rely on the platform. What would stop Microsoft or Atlassian from exploiting their control of a scientific publishing platform? It’s also not clear that any of the git hosting services, which are investing heavily in growth, are profitable yet.</p>
+<p>While these risks shouldn’t be ignored, I think they are no larger (and are probably much smaller) than the risks of using platforms, such as osf.io, that have no long-term funding plan in place. Researchers would retain copyright over their publications that carry open source licenses. Because git repos are an open standard, it’s trivial to host them on multiple platforms and to archive them on multiple data archiving services. Furthermore, the fees that Github, Gitlab, and Bitbucket charge commercial users are pretty small. Some of the plans are as low as $25-$50/user/year. Gitlab has a completely open source version of its cloud platform.</p>
+<p>In summary, there is substantial overlap between programming and the data analysis and modeling that is at the heart of much science. Github and similar hosting services are used by millions of programmers and thousands of researchers every day. These services provide all the features necessary to support scientific journals: online submission, review, revision, and publication. Their business models appear viable, at least judged by the venture capital they are attracting, they are investing heavily in their IT infrastructure, and they enjoy huge economies of scale. Researchers and universities should not use their limited funds to support a small scientific publishing oligopoly that provides little added value. Nor should they fund multiple administrative teams at various open science initiatives that are reinventing the wheel. Instead, the tech industry and broader business community that benefits so heavily from science can subsidize the relatively small costs of publishing scientific research on shared IT platforms like Github, Gitlab, and Bitbucket. Who knows, the synergies of hosting scientific publications might be valuable enough that these services would even compete to attract scientists by developing science-specific features.</p>
+<p>Now down to brass tacks. How would this actually work?</p>
+</div>
+<div id="what-is-git" class="section level1">
+<h1>What is git?</h1>
+<p><em>Skip this part if you already know what git is.</em></p>
+<p>Computer code is just a bunch of text files in a directory. Collaborating on code requires some way to allow multiple programmers to access and edit these files, track changes to them, and revert back to previous versions, if necessary. The solution that has almost universally been adopted is a <a href="https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control">distributed version control system (DVCS)</a>, and one in particular: <a href="https://git-scm.com">git</a>.</p>
+<p>The <a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">basic workflow</a> is as follows: a programmer installs git on her own computer, and then starts a new software project by creating one or more text files in directory. She then runs the git initialization command, which creates a hidden directory inside that project directory. That directory is now a git repository (a <em>repo</em>). She creates a new feature in her software by editing one or more text files in the directory on her own computer, and <em>commits</em> those changes using another git command. This tracks the changes she’s made to each file, stamps the changes with the time, date, and her identity, and stores the changes in the hidden directory.</p>
+<p>The programmer and her collaborators can then use git and numerous third-party tools to inspect precisely what changes have been made to which files, when, and by whom. Think of it like track-changes in Word, but on steroids.</p>
+</div>
+<div id="why-is-a-git-repo-a-good-format-for-a-scientific-publication" class="section level1">
+<h1>Why is a git repo a good format for a scientific publication?</h1>
+<p>A research publication is just a bunch of files in a directory. These include the manuscript itself, the figure files, supplementary information files, and sometimes data and data-processing code files. In some cases, such as writing a single-authored commentary in Word, git would provide few, if any, advantages to the researcher. In many other cases, however, such as working with collaborators on an empirical study that analyzes data using, e.g., python, R, or matlab, git would provide the same enormous advantages that it provides to software developers. The researchers can easily track who is making what changes to which files, when, and where. Thousands of researchers are already using git for exactly this purpose. In addition, the manuscript itself can be written using text-based formats like <a href="https://www.latex-project.org"><span class="math inline">\(\LaTeX\)</span></a> or <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a>, and all the advantages of git when writing code also apply to these text-based documents.</p>
+<p>The most important advantage of git, though, is that it is a open standard, based on open software, that is used by millions of software developers and researchers around the world, and there is a large and growing IT infrastructure that can ‘speak’ git. This means that researchers can conduct their analyses on their own computers and then <em>seamlessly</em> share them with the public via services such as Github.</p>
+</div>
+<div id="what-is-github" class="section level1">
+<h1>What is Github?</h1>
+<p><em>Skip this part if you know what Github is</em></p>
+<p>When the programmer or researcher is ready to share her work, she uploads her git repo to a hosting service, which allows others to view the code, copy it to their own computers using git (cloning), make their own commits to the code using git, and then share any improvements they’ve made using git. Think of git + git hosting as track-changes combined with dropbox, but on steroids.</p>
+<p>The most popular git hosting service is <a href="https://github.com">Github.com</a>, a proprietary cloud service, recently purchased by Microsoft, that ‘speaks git.’ (For a somewhat rah rah version of the Github story, see <a href="https://medium.com/@hnshah/how-github-democratized-coding-built-a-2-billion-business-and-found-a-new-home-at-microsoft-bd94d2dea2a9">this</a>.) <a href="https://gitlab.com">Gitlab</a> is another up-and-comer that, unlike Github, provides a pretty full-featured <a href="https://gitlab.com/gitlab-org/gitlab-ce">open source version</a> of its platform.</p>
+<p>These hosting services also offer an issue tracking feature, which is basically a discussion board where developers or users can report bugs and request new features (issues).</p>
+<p>Oh, and just to repeat, all open source projects can use Github and similar platforms for free.</p>
+</div>
+<div id="creating-a-scientific-journal-on-top-of-github" class="section level1">
+<h1>Creating a scientific journal on top of Github</h1>
+<p>Typically, a researcher submits her manuscript to a journal by using its clunky web interface to upload a manuscript file, such as a Word doc or PDF, one or more figure files, one or more supplementary information files, and perhaps even data and code files. Numerous forms must be filled out that duplicate information in the manuscript itself. The process can easily take the better part of an afternoon. Yuck.</p>
+<p>If git were the standard format for a research manuscript, the researcher would simply organize all the relevant files in a git repo on her own computer, and then push it to Github with single command or click of the mouse. Github et al. are fully capable of providing both html and pdf versions of scientific articles, just as all scientific publishers do today (this blog is hosted on Github). As long as scientific publications use an <a href="https://opensource.org/licenses">open source license</a> (and why wouldn’t they?), hosting would be free.</p>
+<p>But how to create a journal that would comprise hundreds or thousands of repos created by diverse researchers? Github, Gitlab, and Bitbucket have a feature that allows a group of individuals to manage multiple repositories. Github calls these ‘organizations’, Gitlab calls them ‘groups’, and Bitbucket calls them ‘teams.’ I’ll use the Github terminology. To create a new journal, an editor and her associate editors create an organization on Github.</p>
+<p>To get the journal off the ground I think the editor would have to be a highly regarded researcher in her discipline, which would create immediate buzz and trust. <em>I suspect this is key to the whole idea.</em></p>
+<p>To submit an article to the journal, a researcher uploads a repository with all her data, analysis scripts, and a final version of her paper in pdf or html format to her own github account. She also assigns it an <a href="https://opensource.org/licenses">open source license</a>. She then messages the editor to consider her repo for publication. The editor looks at the repo and decides if it is suitable for her journal. If so, she clones the repo into her organization.</p>
+<p>At this point, the repo might be private (not accessible to the public). The Editor then recruits reviewers, who create issues on the issue tracker for the repo. Each issue is one comment/critique that the author(s) will have to address.</p>
+<p>The authors make changes to their manuscript and code to address each issue, and then submit their revisions via, e.g., a <a href="https://help.github.com/en/articles/about-pull-requests">pull request</a>. If they are using a text-based format for their manuscript, Github will display the revisions similar to track-changes in Word.</p>
+<p>Once the editor determines that an issue has been adequately addressed, she closes it. When all issues are closed, the editor decides if she wants to publish the study. If so, she gets a <code>doi</code> for it via, e.g., <a href="https://guides.github.com/activities/citable-code/">zenodo</a>, so the study is citable, and then makes the repo public.</p>
+<p>Done!</p>
+<p>Other researchers can <a href="https://help.github.com/en/articles/fork-a-repo">fork</a> the repo, or star it if they think its cool. Because the code is under an open source license, others can modify it and publish their own analysis (with proper attribution, of course).</p>
+<p>There are many other possibilities for creating a scientific prestige economy on Github, but I’ll leave discussion of those for another time.</p>
+<!-- My basic idea is that scientific researchers could use exactly the same IT infrastructure that open and closed source programmers use to share their files. Use of the infrastructure is free for open source, and it's all built. No need to reinvent the wheel.  -->
+<!-- The basic idea of open source software is that it is hackable: it can be shared with other hackers, who improve it and share their contributions in turn. Hacking software required solving two problems: (1) developing technology to easily share software files with other hackers, and (2) developing social norms about sharing files and giving credit. Both problems have been solved. With a simple command on their own computer, hackers can download all the code for a piece of software, inspect it, fix a bug or add a feature, and then share their changes. For simple changes, the whole process can sometimes be completed in minutes. Social rules for sharing and modifying software are typically based on [copyright](https://en.wikipedia.org/wiki/Copyright) and an [open source license](https://opensource.org/licenses). The resulting virtuous circle has transformed the planet. -->
+<!-- Science should also be hackable (and I don't mean p-hackable!). A scientific publication, like software, is also a bunch of files, such as data files, analysis scripts (increasingly written in R or Python), and the paper itself, which is often a Word or PDF file, but could be a text-based [$\LaTeX$](https://www.latex-project.org) or [markdown](https://en.wikipedia.org/wiki/Markdown) file (which is then compiled to PDF). -->
+<!-- Hackable science would involve technology to easily share these files with other researchers who could verify analyses and conduct new ones, and social norms about sharing the files and giving credit, just like open source. And indeed, [open science](https://en.wikipedia.org/wiki/Open_science) draws a lot inspiration from open source.  -->
+<!-- But in science, there is a huge speed bump: the scientific publishing oligopoly. They charge hefty fees to publish or access research, and often don't publish the underlying data (or if they do, it can be in odd formats -- pdf tables, anyone?). -->
+<!-- The [Open Science Framework](osf.io) is endeavoring to (re)create what open source hackers already have -- free, web-based access to the files underlying research projects. I [use it](https://osf.io/g5rsq/), but the web app is kinda clunky, and they're already nagging me for money.  -->
+<!-- I'm a cheap bastard, and lazy as hell. I want a solution that doesn't cost much, if anything, and that I could start using today without doing any work. -->
+<!-- The open source movement seems to have solved the funding problem: the software industry pays for their use of the global software development IT infrastructure because they benefit tremendously from open source software and the talent pool that creates it.  -->
+<!-- # Other possible publication procedures and norms -->
+<!-- Here I sketch a more-or-less free alternative to the oligopoly, which is based on ideas and tools developed by the open source software folks, who, you know, [built the web](https://en.wikipedia.org/wiki/WorldWideWeb). -->
+</div>
+
+    </div>
+  </article>
+
+  
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  var disqus_config = function () {
+  
+  };
+  (function() {
+    var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
+    };
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//grasshoppermouse.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-59181618-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+

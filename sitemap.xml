@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/2019/07/12/should-scientific-publishing-move-to-github-and-friends/</loc>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+  </url>
   
   <url>
     <loc>/2019/06/20/a-theory-of-natural-selection-5th-century-bc/</loc>
@@ -117,13 +121,13 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-06-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-06-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
