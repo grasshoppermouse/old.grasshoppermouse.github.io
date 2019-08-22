@@ -17,7 +17,7 @@
       <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/2019/07/27/about-90-of-the-genome-is-junk-which-is-very-informative-about-ancestry-but-says-little-about-biology/</guid>
-      <description>p.caption { font-size: 0.7em; }  The genome, taken as a whole, has a profound influence on our biology. Many scientists, myself included, see it as a blueprint for the organism, or perhaps more accurately, as I explain here, a program that generates the entire organism. Why, then, have most geneticists concluded that about 90% of the human genome has no influence on the human organism whatsoever, that it’s “junk”?</description>
+      <description>p.caption { font-size: 0.7em; }  The genome, taken as a whole, has a profound influence on our biology. Many scientists, myself included, see it as a blueprint for the organism, or perhaps more accurately, as I explain here, a program that generates the entire organism. Why, then, have many geneticists concluded that about 90% of the human genome has no influence on the human organism whatsoever, that it’s “junk”?</description>
     </item>
     
     <item>
@@ -141,15 +141,6 @@ Geneticist David Reich confronted this spectre in his recent New York Times Op-E
       <guid>/2017/11/15/pca-new-coordinate-system-same-data/</guid>
       <description>There are many ways to teach Principal Component Analysis (PCA). This way is mine.
 The first constellation I learned to recognize was the Big Dipper. In the evening it’s in one part of the sky, and in the early morning, another, but it’s still the Big Dipper. Same thing if I look at it while I slowly spin around. To be more specific, in each of the 3 figures below, the stars have different \(x\) and \(y\) coordinates, yet it is easy to recognize them as the same stars:</description>
-    </item>
-    
-    <item>
-      <title>Testing an non-nill null</title>
-      <link>/2017/10/22/testing-a-non-nil-null/</link>
-      <pubDate>Sun, 22 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/2017/10/22/testing-a-non-nil-null/</guid>
-      <description>Inspired by Meehl (1967), I decided to design an exercise for my Anthro Quantitive Methods course that would illustrate a non-nil null hypothesis: one that, unlike the standard “nil” hypothesis of “\(~H_0 = 0\)” (Cohen 1994), would be, say \(H_0 = 3\). Because most of the assigned articles for the semester would relentlessly attack Null Hypothesis Significance Testing (NHST), I wanted students to first appreciate that, applied to the right sort of problem, NHST was a powerful tool to challenge our theories (not confirm them!</description>
     </item>
     
     <item>
