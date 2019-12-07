@@ -57,7 +57,7 @@
 
   <article class="article">
     
-    <span class="article-duration">5 min read</span>
+    <span class="article-duration">6 min read</span>
     
 
     <h1 class="article-title">Put your data in an R package</h1>
@@ -101,7 +101,10 @@
 <pre class="r"><code># Run these from the R console
 
 # If devtools package is not already installed
-install.packages(&quot;devtools&quot;) 
+install.packages(&quot;devtools&quot;)
+
+# Check that the usethis package is also installed. If not:
+install.packages(&quot;usethis&quot;)
 
 # Create new package. Directory must not exist. 
 # This also creates a new RStudio project.
@@ -109,19 +112,16 @@ devtools::create(&quot;path/to/my/data/package/&quot;)</code></pre>
 <p>Open your new data package using “Open project…” in RStudio. Then run this code from the console:</p>
 <pre class="r"><code># Run this code after opening the new package in RStudio
 
-# Set up the data-raw directory
-devtools::use_data_raw()
-
-# Create a data processing script in the data-raw directory. 
-# You can use any name you want.
-file.create(&quot;data-raw/process.R&quot;)
+# Set up the data-raw directory and data processing script
+# You can use any name you want
+usethis::use_data_raw(name = &#39;mydataset&#39;)
 
 # This script in the R directory will contain the documentation.
 # You can use any name you want.
 file.create(&quot;R/data.R&quot;)
 
 # Initialize git repository (optional)
-devtools::use_git()</code></pre>
+usethis::use_git()</code></pre>
 <p>Put your data files into the <code>data-raw</code> folder. Your new package directory should look something like this:</p>
 
 <figure >
@@ -131,8 +131,8 @@ devtools::use_git()</code></pre>
     
 </figure>
 
-<p>Write your data processing code in the <code>data-raw/process.R</code> script. It would look something like this:</p>
-<pre class="r"><code># data-raw/process.R
+<p>Write your data processing code in the <code>data-raw/mydataset.R</code> script. It would look something like this:</p>
+<pre class="r"><code># data-raw/mydataset.R
 # Data import and processing pipeline
 
 library(readr)
@@ -143,8 +143,11 @@ demographics &lt;- read_excel(&quot;data-raw/Demographics.xlsx&quot;)
 
 # Data processing code here...
 
-# This should be the last line
-devtools::use_data(pendulum, demographics, overwrite = T)</code></pre>
+# This should be the last line.
+# Note that names are unquoted.
+# I like using overwrite = T so everytime I run the script the 
+# updated objects are saved, but the default is overwrite = F
+usethis::use_data(pendulum, demographics, overwrite = T)</code></pre>
 <p>That last line writes your R data frames and other data objects to files in the <code>data</code> directory (not the <code>data-raw</code> directory!). The <code>data</code> directory will be created if it does not exist.</p>
 <p>Edit your <code>DESCRIPTION</code> file as specified in Hadley Wickham’s book on R packages: <a href="http://r-pkgs.had.co.nz/description.html" class="uri">http://r-pkgs.had.co.nz/description.html</a>.</p>
 <p>You won’t need <code>Imports</code> or <code>Suggests</code>.</p>
