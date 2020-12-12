@@ -67,12 +67,16 @@
     
 
     <div class="article-content">
-      <p>I used to write long R scripts that imported data files, created new variables, reshaped the data, reshaped it again, and spit out results along the way, all in one file.</p>
+      <link href="/rmarkdown-libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/anchor-sections/anchor-sections.js"></script>
+
+
+<p>I used to write long R scripts that imported data files, created new variables, reshaped the data, reshaped it again, and spit out results along the way, all in one file.</p>
 <p>That worked so long as I never wanted to use that data again. But what if I did? Should I just tack on more code for the new analysis, and then even more code for yet more analyses? That approach will litter your environment with objects that are irrelevant for, and might even interfere with, a particular analysis. Should I copy all the files into a new directory and then hack away at the code? Now I have two copies of the data – which one is definitive? Should I just treat the original data files as the data? Now I have to repeat the same initial processing steps every time I want to reuse that data.</p>
 <div id="the-solution" class="section level2">
 <h2>The solution</h2>
 <p>For each new data set I create a new R data package. This package lives in my library along with <code>ggplot2</code>, <code>dplyr</code>, <code>lme4</code>, and all my other packages, and is accessible in any project or analysis with a simple:</p>
-<pre class="r"><code>library(my_data)</code></pre>
+<pre class="r"><code>library(mydatapackage)</code></pre>
 <p>Creating a data package involves some small costs, but these are far outweighed by the benefits.</p>
 </div>
 <div id="pros" class="section level2">
@@ -100,20 +104,17 @@
 <p>I assume you are using RStudio. Although RStudio can create packages using the GUI, I have gotten obscure errors using that feature. Therefore, do <em>not</em> create a new RStudio project using the GUI. Instead, run this code from the console:</p>
 <pre class="r"><code># Run these from the R console
 
-# If devtools package is not already installed
-install.packages(&quot;devtools&quot;)
-
-# Check that the usethis package is also installed. If not:
+# Check that the usethis package is installed. If not:
 install.packages(&quot;usethis&quot;)
 
 # Create new package. Directory must not exist. 
 # This also creates a new RStudio project.
-devtools::create(&quot;path/to/my/data/package/&quot;)</code></pre>
+usethis::create_package(&quot;path/to/my/data/package/&quot;)</code></pre>
 <p>Open your new data package using “Open project…” in RStudio. Then run this code from the console:</p>
 <pre class="r"><code># Run this code after opening the new package in RStudio
 
 # Set up the data-raw directory and data processing script
-# You can use any name you want
+# You can use any name you want for your data
 usethis::use_data_raw(name = &#39;mydataset&#39;)
 
 # This script in the R directory will contain the documentation.
@@ -131,36 +132,36 @@ usethis::use_git()</code></pre>
     
 </figure>
 
-<p>Write your data processing code in the <code>data-raw/mydataset.R</code> script. It would look something like this:</p>
+<p>Write your data processing code in a <code>data-raw/mydataset.R</code> script. It would look something like this:</p>
 <pre class="r"><code># data-raw/mydataset.R
 # Data import and processing pipeline
 
 library(readr)
 library(readxl)
 
-pendulum &lt;- read_csv(&quot;data-raw/pendulum data.csv&quot;)
+mydataset &lt;- read_csv(&quot;data-raw/pendulum data.csv&quot;)
 demographics &lt;- read_excel(&quot;data-raw/Demographics.xlsx&quot;)
 
-# Data processing code here...
+# Data cleaning code here...
+# (Do NOT put data analysis code here!)
 
 # This should be the last line.
 # Note that names are unquoted.
 # I like using overwrite = T so everytime I run the script the 
 # updated objects are saved, but the default is overwrite = F
-usethis::use_data(pendulum, demographics, overwrite = T)</code></pre>
+usethis::use_data(mydataset, demographics, overwrite = T)</code></pre>
 <p>That last line writes your R data frames and other data objects to files in the <code>data</code> directory (not the <code>data-raw</code> directory!). The <code>data</code> directory will be created if it does not exist.</p>
 <p>Edit your <code>DESCRIPTION</code> file as specified in Hadley Wickham’s book on R packages: <a href="http://r-pkgs.had.co.nz/description.html" class="uri">http://r-pkgs.had.co.nz/description.html</a>.</p>
 <p>You won’t need <code>Imports</code> or <code>Suggests</code>.</p>
-<p>At this point you should confirm that you can build and install your package. You should see a <strong>Build</strong> tab in RStudio. Open it and click <strong>Build and Install</strong> (older RStudio versions) or <strong>Install and Restart</strong> (newer RStudio versions), which will build the package and install it in your package library. You should see your package in the <strong>Packages</strong> tab, and you should have access to the data frame objects in any script where you include: <code>library(my_data)</code>.</p>
+<p>At this point you should confirm that you can build and install your package. You should see a <strong>Build</strong> tab in RStudio. Open it and click <strong>Build and Install</strong> (older RStudio versions) or <strong>Install and Restart</strong> (newer RStudio versions), which will build the package and install it in your package library. You should see your package in the <strong>Packages</strong> tab, and you should have access to the data frame objects in any script where you include: <code>library(mydatapackage)</code>.</p>
 </div>
 <div id="document-your-data" class="section level1">
 <h1>Document your data</h1>
-<p>One of the biggest advantages of creating a data package is that it provides a very convenient system for documenting your data, and for accessing that documentation. Although they are not required, I recommend first installing one or both of these utility packages:</p>
-<pre class="r"><code>install.packages(&quot;sinew&quot;)
-devtools::install_github(&quot;mdlincoln/docthis&quot;)</code></pre>
+<p>One of the biggest advantages of creating a data package is that it provides a very convenient system for documenting your data, and for accessing that documentation. Although they are not required, I recommend first installing this utility package:</p>
+<pre class="r"><code>install.packages(&quot;sinew&quot;)</code></pre>
 <p>Open your currently blank <code>R/data.R</code> file, which is where you will add the documentation using <a href="https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html">roxygen</a>.</p>
-<p>Then use the <code>makeOxygen</code> function from the <code>sinew</code> package to create skeleton documentation, e.g., for the <code>pendulum</code> data frame:</p>
-<pre class="r"><code>sinew::makeOxygen(pendulum, add_fields = &quot;source&quot;)</code></pre>
+<p>Then use the <code>makeOxygen</code> function from the <code>sinew</code> package to create skeleton documentation, e.g., for the <code>mydataset</code> data frame:</p>
+<pre class="r"><code>sinew::makeOxygen(mydataset, add_fields = &quot;source&quot;)</code></pre>
 <p>This will print out a skeleton that you copy and paste into your currently empty <code>R/data.R</code> file:</p>
 <pre class="r"><code># This goes in R/data.R
 
@@ -175,15 +176,15 @@ devtools::install_github(&quot;mdlincoln/docthis&quot;)</code></pre>
 #&#39;   \item{\code{Acceleration - resultant (m/s²)}}{double COLUMN_DESCRIPTION} 
 #&#39;}
 #&#39; @source \url{http://somewhere.important.com/}
-&quot;pendulum&quot;</code></pre>
-<p>Do that for each data frame in your package, adding each skeleton to <code>R/data.R</code>. Edit the parts in ALL_CAPS. <code>sinew</code> and <code>docthis</code> also provide RStudio addins, available in the <code>Addins</code> menu. Read their documentation to learn how to use them.</p>
+&quot;mydataset&quot;</code></pre>
+<p>Do that for each data frame in your package, adding each skeleton to <code>R/data.R</code>. Edit the parts in ALL_CAPS. <code>sinew</code> also provides RStudio addins, available in the <code>Addins</code> menu. Read their documentation to learn how to use them.</p>
 <p>For a bit more detail on documenting data packages, see <a href="http://r-pkgs.had.co.nz/data.html" class="uri">http://r-pkgs.had.co.nz/data.html</a>.</p>
 </div>
 <div id="building-your-data-package" class="section level1">
 <h1>Building your data package</h1>
 <p>The final step in creating a data package is to build the package along with the new documentation.</p>
 <p>In the <strong>Build</strong> tab, first select <code>Document</code> from the <code>More</code> menu – this will generate the documentation from from the roxygen markup you created above. Then click <code>Install and Restart</code> (or <code>Build and Reload</code>). You should now be able to access the help page for each data frame in the standard way:</p>
-<pre class="r"><code>?pendulum</code></pre>
+<pre class="r"><code>?mydataset</code></pre>
 <p>You’re done! Just remember, when you change something, update the version number in the <code>DESCRIPTION</code> file and rebuild your package.</p>
 </div>
 
